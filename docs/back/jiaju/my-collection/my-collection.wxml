@@ -1,0 +1,13 @@
+<view class="about">
+   <view class="collect_list flex_row_wrap space_between align_center">
+       <view class="collect_item" wx:for="{{5}}">
+           <view class="item_img flex_row_wrap align_center space_center">
+               <image mode="widthFix" src="/images/total/home_bnt_banner@2x.png"></image>
+           </view>
+           <view class="item_title text">北欧简约设计自如布北欧简约设计自如布</view>
+           <view class="item_price price-color">￥1648</view>
+       </view>
+   </view>
+</view>
+
+

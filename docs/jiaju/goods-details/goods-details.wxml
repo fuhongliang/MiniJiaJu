@@ -1,0 +1,152 @@
+<import src="../../../wxParse/wxParse.wxml"></import>
+<view class="{{show_attr_picker||show||no_scroll?'no-scroll':''}}">
+    <view class="attr-picker" wx:if="{{show_attr_picker}}">
+        <view class="content-box">
+            <view class="flex-row" class="spac">
+                <view class="flex_row_nowrap align_center" style="justify-content: flex-start;position: relative;">
+                    <view class="flex-grow-0" class="spac_img">
+                        <view class="goods-pic-box">
+                            <image mode="aspectFill" src="{{info.goods_default_image}}"></image>
+                        </view>
+                    </view>
+                    <view class="flex-grow-1" class="spac_info">
+                        <view class="spac_info_price">￥{{info.min_price}}</view>
+                        <view>
+                            <view class="spac_stock">库存100件</view>
+                        </view>
+                    </view>
+                    <view class="flex_grow-0" bindtap="hideAttrPicker" style="color:#999999;font-size: 28rpx;position: absolute;top: 30rpx;right: 30rpx;">关闭</view>
+                </view>
+            </view>
+            <scroll-view scrollY="true" style="max-height: 650rpx;">
+                <view style="padding: 24rpx 28rpx">
+                    <view>
+                        <view class="attr-group">
+                            <view class="attr-group-name">颜色</view>
+                            <view class="attr-list">
+                                <text bindtap="attrClick" class="attr-item {{item.checked?'active':''}}">红色</text>
+                                <text bindtap="attrClick" class="attr-item {{item.checked?'active':''}}">黄色</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view style="padding-bottom: 40rpx">
+                        <view>
+                            <view class="flex-grow-1 attr_num">数量</view>
+                            <view>
+                                <view class="flex-row number-input-box align_center flex_start">
+                                    <view bindtap="numberSub" class="number-btn number-sub {{form.number<=1?'disabled':''}}">-
+                                    </view>
+                                    <input bindblur="numberBlur" class="number-input" min="1" step="1" type="number" value="{{form.number}}"></input>
+                                    <view bindtap="numberAdd" class= "number-btn number-add">+
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+
+    <view style="padding-bottom: 120rpx">
+        <swiper autoplay="{{autoplay}}" bindchange="hide" circular="true" class="goods-image-swiper" duration="300" indicatorDots="true" interval="5000">
+            <swiper-item wx:for="{{info.goods_images}}"  wx:key="index">
+                <image bindtap="play" class="play {{img_hide}}" data-url="{{goods.video_url}}" src="/images/video-play.png" wx:if="{{goods.video_url}}"></image>
+                <image bindtap="onGoodsImageClick" class="goods-image" data-index="{{index}}" mode="aspectFill" src="{{item}}"></image>
+            </swiper-item>
+        </swiper>
+        <view class="goods-information">
+            <view class="goods_title">{{info.goods_name}}</view>
+            <view class="goods_price">¥ {{info.min_price}} - ¥ {{info.max_price}}</view>
+            <view class="goods_detail flex_row_nowrap space_between border_bottom">
+                <view class="goods_detail_item">包邮</view>
+                <view class="goods_detail_item">发货时间：72小时</view>
+                <view class="goods_detail_item">销量： 9999</view>
+            </view>
+            <view class="is_services  flex_row_nowrap space_between">
+                <view class="flex_row_nowrap space_between is_services_item">
+                    <image src="../../../images/total/icon_duihao@2x.png"></image>
+                    <view class="services_text">送货上门</view>
+                </view>
+                <view class="flex_row_nowrap space_between is_services_item">
+                    <image src="../../../images/total/icon_duihao@2x.png"></image>
+                    <view class="services_text">专业安装</view>
+                </view>
+                <view class="flex_row_nowrap space_between is_services_item">
+                    <image src="../../../images/total/icon_duihao@2x.png"></image>
+                    <view class="services_text">质保服务</view>
+                </view>
+            </view>
+        </view>
+
+        <view bindtap="showAttrPicker" class="flex-row flex-y-center" style="background: #fff;padding:0 24rpx;margin-bottom: 20rpx;height: 88rpx;">
+            <view class="flex-grow-1 flex-row flex-y-center">
+                <text style="color:#999999;font-size:34rpx">选择</text>
+                <text style="margin-left: 40rpx;font-size: 34rpx;color: #010101">颜色  尺码</text>
+            </view>
+            <view class="flex-grow-0">
+                <image src="../../../images/total/icon_jinru@2x.png" style="width: 16rpx;height: 26rpx"></image>
+            </view>
+        </view>
+        <view class="store_info flex_row_nowrap space_between align_center">
+            <view class="store_info_img">
+                <image src="{{info.store_info.store_avatar}}"></image>
+            </view>
+            <view class="store_info_name flex_column align_center">
+                <view class="store_info_name_name">{{info.store_info.store_name}}</view>
+                <view class="store_star flex_row_nowrap align_center">
+                    <view class="star" wx:for="{{star}}"  wx:key="index"></view>
+                    <text class="star_score">5.0</text>
+                </view>
+            </view>
+            <view class="goto_store">
+                <navigator>进店看看</navigator>
+            </view>
+        </view>
+        <view class="p_detail">
+            <view class="p_detail_title">商品详情</view>
+            <view class="p_detail_img" wx:for="{{info.goods_desc_image}}" wx:key="index">
+                <image src="{{item}}"></image>
+            </view>
+            <view class="p_detail_text" wx:for="{{info.goods_desc_text}}"  wx:key="index">
+               {{item}}
+            </view>
+        </view>
+    </view>
+
+    <view class="flex-row bar-bottom">
+        <view class="flex-grow-0 flex-row  flex_row_nowrap space_between align_center ">
+            <navigator class="flex-grow-0 flex-y-center bar-bottom-btn" openType="redirect" url="/mch/shop/shop?mch_id={{goods.mch.id}}">
+                <view>
+                    <image src="/images/total/xiangqing_ic_dp@2x.png"></image>
+                    <text>店铺</text>
+                </view>
+            </navigator>
+            <view bindtap="favoriteRemove" class="flex-grow-0 flex-y-center bar-bottom-btn" wx:if="{{goods.is_favorite&&goods.is_favorite==1}}">
+                <view>
+                    <image src="/images/total/xiangqing_ic_sc@2x.png"></image>
+                    <text>已收藏</text>
+                </view>
+            </view>
+            <view bindtap="favoriteAdd" class="flex-grow-0 flex-y-center bar-bottom-btn" wx:else>
+                <view>
+                    <image src="/images/total/xiangqing_ic_sc@2x.png"></image>
+                    <text>收藏</text>
+                </view>
+            </view>
+            <button class="flex-grow-0 flex-y-center bar-bottom-btn" openType="contact" plain="true">
+                <view>
+                    <image src="/images/total/xiangqing_ic_kf@2x.png"></image>
+                    <text>客服</text>
+                </view>
+            </button>
+        </view>
+        <view class="flex-grow-1 flex-row align_center space_between" style="background: #FFFFFF;">
+            <view bindtap="addCart" class="flex-y-center flex-x-center add-cart">加入购物车</view>
+            <view bindtap="buyNow" class="flex-y-center flex-x-center buy-now">立即购买</view>
+        </view>
+    </view>
+
+
+
+</view>

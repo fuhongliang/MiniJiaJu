@@ -1,0 +1,250 @@
+page {
+    overflow-x: hidden;
+}
+.container{
+    overflow: hidden;
+    width: 750rpx;
+    height: auto;
+}
+
+.order_head{
+    position: relative;
+    width: 690rpx;
+    height: auto;
+    background: #FFFFFF;
+    border-radius:10rpx;
+    margin-left: 30rpx;
+}
+
+.status-bar {
+    height: 88rpx;
+    border-bottom:0.5px solid #F2F2F2;
+}
+
+.status-bar image {
+    width: 124rpx;
+    height: 124rpx;
+    margin: 0 30rpx;
+}
+
+.status-bar .text{
+    color: #FFFFFF;
+    font-size: 48rpx;
+}
+.attr{
+    font-size: 24rpx;
+    color: #999999;
+    margin-right: 20rpx;
+    display: inline-block;
+    text-align: left;
+}
+.order_detail{
+    width: 690rpx;
+    background: #FFFFFF;
+    border-radius:10rpx;
+    padding-bottom: 30rpx;
+    margin-top: 15rpx;
+}
+
+.goods_detail {
+    width: 690rpx;
+    height: auto;
+    background:#FFFFFF;
+    border-radius: 10rpx;
+}
+.goods_name{
+    width: 450rpx;
+}
+.status_detail{
+    width: 690rpx;
+    height: 118rpx;
+    border-bottom:0.5px solid #F2F2F2;
+}
+
+.status_detail_img{
+    width: 26rpx;
+    height: 26rpx;
+}
+
+.status_detail_img image{
+    width: 26rpx;
+    height: 26rpx;
+}
+
+
+.block {
+    padding: 32rpx 0 20rpx 0;
+    margin-bottom: 20rpx;
+    width: 690rpx;
+    height: auto;
+    background:#FFFFFF;
+    border-radius: 10rpx;
+}
+
+.block .block-row {
+    margin-bottom: 10rpx;
+    padding:0 30rpx;
+}
+
+.block .block-footer {
+    margin-left: -24rpx;
+    margin-right: -24rpx;
+    padding: 24rpx;
+    padding-bottom: 0;
+    margin-top: 32rpx;
+    text-align: right;
+    font-weight: bold;
+}
+.business_info{
+    padding-bottom: 29rpx;
+    border-bottom: 0.5px solid #F2F2F2;
+    margin-left: 30rpx;
+    padding-right: 30rpx;
+}
+.business_avatar{
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    margin-right: 15rpx;
+}
+.business_name{
+    font-size: 30rpx;
+    color: #000000;
+    margin-right: 15rpx;
+}
+.business_arrow{
+    width: 10rpx;
+    height: 16rpx;
+}
+
+.goods-item {
+    margin-left: 30rpx;
+    padding-right: 30rpx;
+    border-bottom: 0.5px solid #F2F2F2;
+    padding-bottom: 20rpx;
+    margin-bottom: 32rpx;
+}
+
+.goods-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.refund-btn {
+    float: right;
+    height: 60rpx;
+    border: 1rpx solid rgba(230, 230, 230, 1);
+    background:#FFFFFF;
+    padding: 0 30rpx;
+    border-radius: 30rpx;
+    margin-top: 20rpx;
+    font-size: 22rpx;
+    color: #333333;
+}
+
+.refund-text {
+    float: right;
+    display: inline-block;
+    margin-top: 20rpx;
+    font-size: 22rpx;
+}
+
+.contact{
+    width: 690rpx;
+    height: 88rpx;
+    background: #0EC262;
+    border-radius: 44rpx;
+    color: #FFFFFF;
+    font-size: 32rpx;
+    text-align: center;
+    line-height: 88rpx;
+}
+.confirm{
+    width: 690rpx;
+    height: 88rpx;
+    background: #0EC262;
+    border-radius: 44rpx;
+    color: #FFFFFF;
+     font-size: 32rpx;
+    text-align: center;
+    line-height: 88rpx;
+}
+.cancel{
+    width: 690rpx;
+    height: 88rpx;
+    background: #FFFFFF;
+    border-radius: 44rpx;
+    border:1rpx solid #E6E6E6;
+    color: #333333;
+    font-size: 32rpx;
+    text-align: center;
+    line-height: 88rpx;
+}
+.goto_pay{
+    width: 690rpx;
+    height: 88rpx;
+    background: #0EC262;
+    border-radius: 44rpx;
+    color: #FFFFFF;
+    font-size: 32rpx;
+    text-align: center;
+    line-height: 88rpx;
+}
+
+.title-info{
+    font-size: 30rpx;
+    color: #000000;
+    height: 50rpx;
+    line-height: 50rpx;
+    font-weight: 500;
+}
+.ltitle-info{
+    font-size: 24rpx;
+    color: #999999;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+.title{
+    font-size: 32rpx;
+    color: #000000;
+    font-weight: bold;
+    padding-bottom: 28rpx;
+    border-bottom:0.5px solid #F2F2F2;
+    padding-left: 30rpx;
+}
+.ltitle_msg{
+    font-size: 32rpx;
+    color: #333333;
+    line-height: 50rpx;
+}
+.con_msg{
+    font-size: 32rpx;
+    color: #666666;
+    height: auto;
+    line-height: 50rpx;
+    text-align: justify;
+}
+.ltitle{
+    font-size: 28rpx;
+    color: #333333;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+.con{
+    font-size: 28rpx;
+    color: #666666;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+.copy_btn{
+    width:84rpx;
+    height:44rpx;
+    background:rgba(255,255,255,1);
+    border:1rpx solid rgba(230, 230, 230, 1);
+    border-radius:22rpx;
+    font-size: 22rpx;
+    color: #333333;
+    padding:10rpx 19rpx;
+}

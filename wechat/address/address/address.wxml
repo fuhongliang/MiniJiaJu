@@ -1,0 +1,42 @@
+<view class="bottom-bar flex_row_nowrap align_center">
+    <navigator url="/address/address-edit/address-edit" class="flex-grow-1 flex_row_nowrap align_center space_center">
+        <image style="width: 34rpx;height: 34rpx;" class="mr-30" src="{{img_url}}/shouhuo_ic_addd@2x.png"></image>
+        <view class="font-module color-white">添加新地址</view>
+    </navigator>
+</view>
+<view class="no-data-tip" wx:if="{{show_no_data_tip}}">暂无收货地址</view>
+<view class="address-list mt-30">
+    <view class="address-item" wx:for="{{address_list}}" wx:key="index">
+        <view class="userinfo flex-row">
+            <view class="flex-grow-1">{{item.name}}</view>
+            <view class="flex-grow-1">{{item.mobile}}</view>
+        </view>
+        <view class="address-detail">{{item.address}}</view>
+        <view class="flex-row">
+            <view class="flex-grow-1">
+                <view class="address-change flex_row_nowrap align_center" wx:if="{{item.is_default==1}}">
+                    <image src="{{img_url}}/gwc_ic_xuanze.png"></image>
+                    <view class="default-address active flex-y-center">
+                        <text>默认地址</text>
+                    </view>
+                </view>
+                <view  bindtap="setDefaultAddress" data-index="{{index}}" class="address-change flex_row_nowrap align_center" wx:else>
+                    <image src="{{img_url}}/gwc_ic_xuanze1.png"></image>
+                    <view class="default-address flex-row flex-y-center">
+                        <view>设为默认</view>
+                    </view>
+                </view>
+            </view>
+            <view class="flex-grow-0 flex-row">
+                <navigator class="address-option edit flex-y-center" url="/address/address-edit/address-edit?id={{item.id}}">
+                    <image src="{{img_url}}/shouhuo_ic_bj@2x.png"></image>
+                    <text>编辑</text>
+                </navigator>
+                <view bindtap="deleteAddress" class="delete address-option flex-y-center" data-id="{{item.id}}" data-index="{{index}}">
+                    <image src="{{img_url}}/shouhuo_ic_sc@2x.png"></image>
+                    <text>删除</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

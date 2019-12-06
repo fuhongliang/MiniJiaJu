@@ -1,0 +1,249 @@
+.confirm{
+  width:750rpx;
+  height: auto;
+}
+
+.body{
+  width:750rpx;
+  height: auto;
+  background: #F5F5F5;
+}
+
+.add_address{
+  width:300rpx;
+  text-align: center;
+  height:66rpx;
+  line-height: 66rpx;
+  background:rgba(255,255,255,1);
+  border:1rpx solid rgba(14, 194, 98, 1);
+  border-radius:33rpx;
+  font-size:30rpx;
+  font-weight:500;
+  color:rgba(14,194,98,1);
+}
+.person_info{
+  width: 750rpx;
+  height: 180rpx;
+  position: relative;
+}
+
+.bg_img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 750rpx;
+  height: 131rpx;
+  z-index: 1;
+}
+.address{
+  width: 690rpx;
+  height: 141rpx;
+  z-index: 3;
+  background: #FFFFFF;
+  position: absolute;
+  top: 10rpx;
+  left: 30rpx;
+  border-radius: 10rpx;
+}
+
+.address_img{
+  width: 98rpx;
+}
+
+.address_img image{
+  width: 29rpx;
+  height: 38rpx;
+}
+
+.address_info{
+  width: 513rpx;
+}
+
+.person_user{
+  font-size:36rpx;
+  font-weight:bold;
+  color:#000000;
+}
+.person_user text:last-child{
+  margin-left: 55rpx;
+  margin-top: 24rpx;
+}
+
+.person_address{
+  font-size:26rpx;
+  color: #666666;
+}
+
+.confirm_arrow image{
+  width: 30rpx;
+  height: 20rpx;
+}
+
+/* 商品信息 */
+
+.confirm_goods{
+  width: 750rpx;
+  min-height: 391rpx;
+  background: #FFFFFF;
+  margin-bottom: 30rpx;
+}
+
+.confirm_business{
+  width: 720rpx;
+  height: 87rpx;
+  margin-left: 30rpx;
+  border-bottom:1rpx solid #F2F2F2;
+}
+
+.confirm_avatar{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.confirm_avatar image{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+}
+
+.confirm_name{
+  margin-left: 14rpx;
+  font-size:30rpx ;
+  color: #000000;
+}
+
+.confirm_arrow{
+  width: 10rpx;
+  height: 16rpx;
+  margin-left: 18rpx;
+}
+
+.goods_info{
+  width: 700rpx;
+  height: 214rpx;
+  border-bottom:1rpx solid #F2F2F2;
+  margin-left: 30rpx;
+  padding: 30rpx 0;
+}
+
+.goods_info_img{
+  width: 154rpx;
+  height: 154rpx;
+  margin-right: 30rpx;
+}
+
+.goods_info_img image{
+  width: 154rpx;
+  height: 154rpx;
+}
+
+.goods_info_text{
+  width: 500rpx;
+  height: 154rpx;
+}
+
+.goods_info_title{
+  width: 500rpx;
+  font-size:34rpx;
+  color: #333333;
+  text-align: left;
+}
+
+.goods_info_spec{
+  font-size:28rpx;
+  color: #999999;
+  text-align: left;
+}
+
+.price_container{
+  margin-top: 35rpx;
+}
+
+.goods_price{
+  font-size:34rpx;
+  color: #FD5757;
+  text-align: left;
+  font-weight: bold;
+}
+
+.goods_num{
+  font-size:30rpx;
+  color: #999999;
+}
+
+.message{
+  width: 690rpx;
+  margin-left: 30rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+.message_title{
+  color:#000000;
+  font-size:32rpx;
+}
+.message_input{
+  height: 88rpx;
+  margin-left: 40rpx;
+  color:#999999;
+  font-size: 32rpx;
+}
+
+.message_input input{
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.total_prices{
+  width:750rpx;
+  padding:0 30rpx;
+  height: 88rpx;
+  border-bottom:1rpx solid #F2F2F2;
+  margin-top: 30rpx;
+  background:#FFFFFF;
+}
+
+.total_prices_account{
+  color:#FD5757;
+  font-size: 32rpx;
+}
+
+.freight{
+  width:750rpx;
+  padding:0 30rpx;
+  height: 88rpx;
+  background:#FFFFFF;
+}
+
+.freight_price{
+  color:#FD5757;
+  font-size: 32rpx;
+}
+
+
+.confirm_bar{
+  width: 750rpx;
+  padding:0 30rpx;
+  height: 108rpx;
+  background: #FFFFFF;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+}
+.price_title{
+  font-size: 34rpx;
+  color: #000000;
+}
+.price{
+    font-size: 34rpx;
+  color: #FD5757;
+}
+.submit_order{
+  width:220rpx;
+  height:80rpx;
+  background:#0EC262;
+  border-radius:40rpx;
+  color:#FFFFFF;
+  text-align: center;
+  line-height: 80rpx;
+}

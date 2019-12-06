@@ -1,0 +1,81 @@
+<view class="info">
+    <form bindsubmit="check" reportSubmit="true">
+    <view class="info-list" style="width:100%;">
+        <view class="info-one">
+            <image src="{{img_url}}/icon-coupon-enabled.png"></image>
+            <view class="info-content flex-row flex-x-center flex-y-center">
+                <view class="flex-grow-0">
+                    <view class="flex-row flex-y-bottom">
+                        <view class="flex-grow-0">￥</view>
+                        <view class="flex-grow-1" style="font-size:23pt;">{{coupon.coupon_price}}</view>
+                    </view>
+                </view>
+                <view class="flex-grow-1" style="font-size:11pt">
+                    <view style="margin-left:16rpx;">
+                        <view style="margin-bottom:4rpx;">抵扣券</view>
+                        <view>{{coupon.coupon_title}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="info-footer">
+                <view class="info-day">每人限购：{{coupon.user_num}}</view>
+                <view>
+                    <view>{{coupon.brand_list}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class='flex-row flex-y-center' style="background: #fff;padding: 0 12rpx;height: 90rpx;border-bottom: 1rpx solid #e3e3e3;">
+        <view class="flex-grow-1" style='color:#ff4544;'>会员手机号</view>
+        <view class="flex-grow-0"><input type='text' class='othermobile' name="other_mobile" bindinput='otherMobile' placeholder='请输入手机号（必填）'></input></view>
+    </view>
+    <view class="flex-row flex-y-center" style="background: #fff;padding: 0 12rpx;height: 90rpx;border-bottom: 1rpx solid #e3e3e3;">
+        <view class="flex-grow-1">数量</view>
+        <view class="flex-grow-0">
+            <view class="flex-row">
+                <image bindtap="cartLess" class="image1" id="{{item.cart_id}}" src="{{img_url}}/cart_less.png" wx:if="{{num != 1}}"></image>
+                <image class="image1" src="{{img_url}}/cart_no_less.png" wx:if="{{item.num==1}}"></image>
+                <view class="row-data">{{num}}</view>
+                <image class="image1" src="{{img_url}}/cart_no_add.png" wx:if="{{num == 10000}}"></image>
+                <image bindtap="cartAdd" class="image1" id="{{item.cart_id}}" src="{{img_url}}/cart_add.png" wx:if="{{num != 10000}}"></image>
+            </view>
+        </view>
+    </view>
+
+    <view bindtap="showPayment" class="flex-row flex-y-center" style="background: #fff;padding: 0 12rpx;height: 90rpx;border-bottom: 1rpx solid #e3e3e3;">
+        <view class="flex-grow-1">支付方式</view>
+        <view class="flex-grow-0" wx:if="{{payment==0}}">微信支付</view>
+        <view class="flex-grow-0" wx:if="{{payment==3}}">账户余额支付</view>
+        <view class="flex-grow-0">
+            <image src="{{img_url}}/icon-jiantou-r.png" style="width: 12rpx;height: 22rpx;margin-left: 12rpx"></image>
+        </view>
+    </view>
+    <view class="flex-row flex-y-center" style="background: #fff;padding: 0 12rpx;height: 90rpx">
+        <view class="flex-grow-1">小计</view>
+        <view class="flex-grow-0">
+            <view style="color:#ff4544">￥{{total_price}}</view>
+        </view>
+    </view>
+
+    <view class="flex-row flex-y-center" style="padding: 0 30rpx;height: 90rpx;margin-top: 30rpx;">
+        <button class="flex-y-center flex-grow-0 flex-x-center submit-btn" formType="submit">提交</button>
+    </view>
+    </form>
+</view>
+<view class="payment" wx:if="{{show_payment}}">
+    <view class="pay-modal">
+        <view class="pay-head flex-x-center flex-y-center">请选择支付方式</view>
+        <view bindtap="payPicker" class="pay-block flex-row flex-y-center" data-index="{{item.payment}}" wx:for="{{pay_type_list}}">
+            <view class="flex-grow-0">
+                <image src="{{item.icon}}" style="width:72rpx;height:72rpx;margin-right:30rpx;"></image>
+            </view>
+            <view class="flex-grow-1 {{payment==item.payment?'red':''}}">{{item.name}}</view>
+            <view class="flex-grow-0" wx:if="{{payment==item.payment}}">
+                <image src="{{img_url}}/icon-pay-right.png" style="width:34rpx;height:24rpx;"></image>
+            </view>
+        </view>
+        <view bindtap="payClose" class="pay-footer flex-x-center flex-y-center hidden">关闭</view>
+    </view>
+</view>
+<include src="/commons/get-coupon/get-coupon.wxml"></include>

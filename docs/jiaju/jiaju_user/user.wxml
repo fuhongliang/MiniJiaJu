@@ -1,0 +1,71 @@
+<include src="/commons/extension/extension"></include>
+<view class="page {{__page_classes}}">
+    <include src="/commons/header/header"></include>
+    <view class="body after-navber">
+        <view style="position:relative;" class="head_container">
+            <view class="user-info flex-row flex-y-center">
+                <image class="user-info-bg" mode="aspectFill" src="/images/total/me_bnt_bj@2x.png"></image>
+                <view class="flex-grow-1 flex-y-center flex-row userinfo-name">
+                    <view class="flex-grow-0">
+                        <image class="avatar" src="{{user_info.avatar_url}}"></image>
+                    </view>
+                    <view class="flex-grow-1">
+                        <view class="user-name">{{user_info.nickname}}</view>
+                        <view class="user-phone">{{user_phone}}</view>
+                    </view>
+                </view>
+            </view>
+
+
+
+            <view class="order-block" wx:if="{{setting&&setting.is_order==1}}">
+                <view class="flex-row align_center" style="width: 100%;height: 100%;;">
+                        <navigator class="nav-item flex-grow-1" url="/pages/order/order?status=0">
+                            <view class="nav_item_img">
+                                <image src="/images/total/me_ic_d_dfkk@2x.png"></image>
+                            </view>
+                            <view class="nav_item_text">{{orders.status_0.text?orders.status_0.text:'待付款'}}</view>
+                        </navigator>
+                        <navigator class="nav-item flex-grow-1" url="/pages/order/order?status=1">
+                            <view class="nav_item_img">
+                                <image src="/images/total/me_ic_d_dfh@2x.png"></image>
+                            </view>
+                            <view class="nav_item_text">{{orders.status_1.text?orders.status_1.text:'待发货'}}</view>
+                        </navigator>
+                        <navigator class="nav-item flex-grow-1" url="/pages/order/order?status=2">
+                            <view class="nav_item_img">
+                                <image src="/images/total/me_ic_d_dsh@2x.png"></image>
+                            </view>
+                            <view class="nav_item_text">{{orders.status_2.text?orders.status_2.text:'待收货'}}</view>
+                        </navigator>
+                        <navigator class="nav-item flex-grow-1" url="/pages/order/order?status=3">
+                            <view class="nav_item_img">
+                                <image src="/images/total/me_ic_d_ywc@2x.png"></image>
+                            </view>
+                            <view class="nav_item_text">{{orders.status_3.text?orders.status_3.text:'已完成'}}</view>
+                        </navigator>
+                        <image class="nav-item-arrow" src="/images/total/me_ic_d_yinying@2x.png"></image>
+                        <navigator class="nav-item nav-item-all flex-grow-1" url="/pages/order/order?status=4">
+                            <view class="nav_item_img">
+                                <image src="/images/total/me_ic_d_qbdd@2x.png"></image>
+                            </view>
+                            <view class="nav_item_text">全部订单</view>
+                        </navigator>
+                </view>
+            </view>
+            
+        </view>
+        <!-- 我的列表 me_ic_a_tp@2x -->
+        <view class="option_list">
+           <view class="list_item flex_row_nowrap align_center" wx:for="{{option_list}}">
+               <navigator class="flex_row_nowrap align_center">
+                   <image class="list_item_img" src="{{item.pic_url}}"></image>
+                   <view class="list_item_text">{{item.text}}</view>
+               </navigator>
+           </view>
+        </view>
+        
+        <include src="/commons/copyright/copyright.wxml"></include>
+    </view>
+    <include src="/commons/footer/footer"></include>
+</view>

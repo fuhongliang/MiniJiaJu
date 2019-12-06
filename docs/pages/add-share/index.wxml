@@ -1,0 +1,130 @@
+<view class="{{show_modal?'no-scroll':''}}">
+    <view class="step1" wx:if="{{user_info.is_distributor==0}}">
+        <view class="info-bg">
+            <image class="bg" src="{{share_setting.pic_url_1}}"></image>
+        </view>
+        <form bindsubmit="formSubmit" reportSubmit="true">
+            <view class="info">
+                <view class="info-label flex-row">
+                    <view class="flex-y-center">
+                        欢迎加入
+                        <view class="info-red" style="width:260rpx; overflow: hidden;-webkit-line-clamp: 1;display: -webkit-box;-webkit-box-orient: vertical;">{{store.name}}</view>请填写申请信息
+                    </view>
+                </view>
+                <view class="info-label info-content flex-row">
+                    <view class="info-left flex-y-center">邀请人</view>
+                    <view class="info-right flex-row">
+                        <view class="info-red flex-grow-0 flex-y-center">{{user_info.parent}}</view>
+                        <view class="info-gray flex-group-1 flex-y-center">(请核对)</view>
+                    </view>
+                    <view bindtap="bindSelectParentUser" class="flex-row">
+                        <image src="{{img_url}}/icon-jiantou-r.png" style="width: 12rpx;margin-top:39rpx;height: 22rpx;margin-left:300rpx;"></image>
+                    </view>
+                </view>
+                <view class="info-label info-content flex-row">
+                    <view class="info-left flex-y-center required">姓名</view>
+                    <view class="info-right flex-row flex-y-center">
+                        <input class="name-input" name="name" placeholder="请填写真实姓名" value="{{form.name}}"></input>
+                    </view>
+                </view>
+                <view class="info-label info-content flex-row">
+                    <view class="info-left flex-y-center required">手机号码</view>
+                    <view class="info-right flex-row flex-y-center">
+                        <input class="mobile-input" name="mobile" placeholder="请填写手机号码" type="number" value="{{form.mobile}}"></input>
+                    </view>
+                </view>
+                <view class="info-label info-content flex-row">
+                    <view class="info-left flex-y-center required">工种</view>
+                    <view class="info-right flex-row flex-y-center">
+                        <picker bindchange="bindWorkTypeChange" name="gongzhong" value="{{index}}" range="{{work_type}}">
+                          <view class="picker">
+                            {{work_type[index]}}
+                          </view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="info-label info-content flex-row">
+                    <view class="info-left flex-y-center required">装修案例</view>
+                    <view class="info-right flex-row flex-y-center">
+                        <input class="name-input" name="case" placeholder="请填写装修案例" value=""></input>
+                    </view>
+                </view>
+                <view class="info-label info-content flex-row">
+                    <view class="info-left flex-y-center required" style='width:90%'>上传本人身份证资料</view>
+                </view>
+                <view class="info-label info-content flex-row" style='height:260rpx;'>
+                    <view class="uploadimg" bindtap='bindUploadImg'>
+                        <image src='{{icdimg}}' class='img'></image>
+                        <input hidden='true' name="icdimg" value="{{icdimg}}"></input>
+                    </view>
+                    <view class="uploadimg" bindtap='bindUploadImg2'>
+                        <image src='{{icdimg2}}' class='img'></image>
+                        <input hidden='true' name="icdimg2" value="{{icdimg2}}"></input>
+                    </view>
+                </view>
+                <view class="info-label info-content flex-row">
+                    <view bindtap="agree" class="info-agree flex-row flex-y-center">
+                        <input hidden="true" name="agree" value="{{agree}}"></input>
+                        <image src="{{img}}" style="width:32rpx;height:32rpx;"></image>
+                        <text style="margin-left:10rpx;">我已经阅读并了解</text>
+                        <view bindtap="agreement" style="color:#014c8c">【土专家申请协议】</view>
+                    </view>
+                </view>
+            </view>
+            <view class="info-btn flex-row">
+                <button class="flex-y-content info-btn-content" formType="submit">申请成为土专家</button>
+            </view>
+        </form>
+        <view class="info">
+            <view class="info-label flex-row">
+                <view class="flex-y-center">土专家特权</view>
+            </view>
+            <view class="info-label info-height flex-row" wx:if="{{false}}">
+                <view class="flex-y-center">
+                    <image class="info-icon" src="{{img_url}}/img-share-shop.png"></image>
+                </view>
+                <view class="info-block">
+                    <view class="info-top bold">独立小店</view>
+                    <view class="info-bottom">拥有自己的小店及二维码</view>
+                </view>
+            </view>
+            <view class="info-label info-height flex-row">
+                <view class="flex-y-center">
+                    <image class="info-icon" src="{{img_url}}/img-share-money.png"></image>
+                </view>
+                <view class="info-block">
+                    <view class="info-top bold">销售拿佣金</view>
+                    <view class="info-bottom">销售获得积分，成为土专家后购买商品，将获得积分换购</view>
+                </view>
+            </view>
+            <view class="info-label info-height flex-row">
+                <view class="flex-y-center info-block">平台的商品销售统一由当地专卖店发货、并提供产品的售后服务</view>
+            </view>
+        </view>
+    </view>
+    <view class="step2" wx:else>
+        <block wx:if="{{search_finish}}">
+            <view class="info-bg" style="height:300rpx">
+                <image class="bg" src="{{share_setting.pic_url_2}}"></image>
+            </view>
+            <view class="info">
+                <view class="info-title">
+                    <image class="info-images" src="{{img_url}}/img-share-info.png"></image>
+                </view>
+                <view class="info-content">谢谢您的支持，请等待审核！</view>
+                <view class="flex-row info-btn1">
+                    <navigator class="flex-y-content btn" openType="redirect" url="/pages/index/index">去商城逛逛</navigator>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>
+<view class="agree-modal flex-x-center flex-y-center {{show_modal?'':'hidden'}}">
+    <view style="width:600rpx;background-color:#fff;border-radius:20rpx;">
+        <view class="agree-head flex-x-center flex-y-center" style="height:100rpx;">土专家协议</view>
+        <view class="agree-body">
+            <text>{{share_setting.agree}}</text>
+        </view>
+        <view bindtap="close" class="agree-footer flex-x-center flex-y-center" style="">我已阅读</view>
+    </view>
+</view>

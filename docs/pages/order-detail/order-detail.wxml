@@ -1,0 +1,180 @@
+<view class="container">
+    <view class="order_head">
+        <image src="./dingdan_beijing@2x.png" class="order_head_img"></image>
+        <view class="status-bar flex_row_nowrap flex_start align_center">
+            <image mode="aspectFill" src="./gz_ic_dfhh@2x.png"></image>
+            <view class="text">{{order.status}}</view>
+        </view>
+        <view class="status-bar flex_row_nowrap flex_start align_center" wx:if="{{1 == 0}}">
+            <image mode="aspectFill" src="./gz_ic_dsh@2x.png"></image>
+            <view class="text">{{order.status}}</view>
+        </view>
+        <view class="status-bar flex_row_nowrap flex_start align_center" wx:if="{{1 == 0}}">
+            <image mode="aspectFill" src="./gz_ic_dfkk@2x.png"></image>
+            <view class="text">{{order.status}}</view>
+        </view>
+        <view class="status-bar flex_row_nowrap flex_start align_center" wx:if="{{1 == 0}}">
+            <image mode="aspectFill" src="./gz_ic_ywcc@2x.png"></image>
+            <view class="text">{{order.status}}</view>
+        </view>
+        <view class="status-bar flex_row_nowrap flex_start align_center" wx:if="{{1 == 0}}">
+            <image mode="aspectFill" src="./gz_ic_yqxx@2x.png"></image>
+            <view class="text">{{order.status}}</view>
+        </view>
+        
+        <view class="order_detail ml-30 mr-30 mt-30">
+            <view class="status_detail flex_row_nowrap align_center  ml-30">
+                <view class="status_detail_img flex-grow-0">
+                    <image src="/images/total/icon_ic_shouhdz@2x.png"></image>
+                </view>
+                <view class="flex-grow-1 ml-30">
+                    <view class="title-info fwb">[深圳市] 深圳市福田区分部已发出 </view>
+                    <view class="status_detail_name flex_row_nowrap align_center ltitle-info">
+                        <view class="flex-grow-0 mr-30">2019-06-03 20:02</view>
+                    </view>
+                </view>
+            </view>
+            <view class="status_detail flex_row_nowrap align_center  ml-30">
+                <view class="status_detail_img flex-grow-0">
+                    <image src="/images/total/icon_ic_dingqianwsz.png"></image>
+                </view>
+                <view class="flex-grow-1 ml-30">
+                    <view class="title-info fwb">{{order.address}}</view>
+                    <view class="status_detail_name flex_row_nowrap align_center ltitle-info">
+                        <view class="flex-grow-0 mr-30">{{order.name}}</view>
+                        <view class="flex-grow-1"> {{order.mobile}}</view>
+                    </view>
+                </view>
+            </view>
+            
+            
+            
+            <view class="goods_detail mt-30">
+                <view class="business_info  flex_row_nowrap align_center mb-30">
+                    <image class="business_avatar" src="/images/total/home_bnt_banner@2x.png"></image>
+                    <view  class="business_name">fefsafs</view>
+                    <image class="business_arrow" src="/images/total/dingdan_jinru@2x.png"></image>
+                </view>
+                <view class="flex-row goods-item" wx:for="{{order.goods_list}}">
+                    <view class="flex-grow-0">
+                        <navigator hover-class="none" style="font-size: 0" url="/pages/goods/goods?id={{item.goods_id}}">
+                            <image mode="aspectFill" src="{{item.goods_pic}}" style="width: 156rpx;height: 156rpx"></image>
+                        </navigator>
+                    </view>
+                    <view class="flex-grow-1" style="padding-left: 20rpx">
+                        <navigator class="goods_name text" hover-class="none" url="/pages/goods/goods?id={{item.goods_id}}">{{item.name}}</navigator>
+                        <view class="attr" wx:for="{{item.attr}}">
+                          {{item.attr_group_name}}：{{item.attr_name}}
+                        </view>
+                         <view class="flex_row_nowrap space_between align_center mt-30">
+                            <view class="flex-grow-0" style="color: #FD5757">￥：{{item.total_price}}</view>
+                            <view class="flex-grow-0">×{{item.num}}</view>
+                        </view>
+                        <view wx:if="{{item.order_refund_enable==1}}" style="display: none;">
+                            <navigator hover-class="none" class="flex-y-center refund-btn" url="/pages/order-refund/order-refund?id={{item.order_detail_id}}" wx:if="{{item.is_order_refund==0}}">申请售后
+                  </navigator>
+                            <text class="refund-text" wx:else>已申请售后</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+
+        <navigator hover-class="none" class="block flex-row ml-30 mr-30 mt-30" url="/pages/express-detail/express-detail?id={{order.order_id}}" wx:if="{{order.express_no&&order.is_send==1}}">
+            <view class="flex-grow-1">
+                <view class="mb-10">快递公司：{{order.express}}</view>
+                <view class="">快递单号：{{order.express_no}}</view>
+            </view>
+            <view class="flex-grow-0 flex-y-center">
+                <image src="/images/icon-jiantou-r.png" style="width: 12rpx;height: 22rpx"></image>
+            </view>
+            <view class="block-row flex-row" wx:if="{{false}}">
+                <view class="flex-grow-1">快递单号：{{order.express_no}}</view>
+                <view class="flex-grow-0">
+                    <text bindtap="copyText" class="copy-text-btn" data-text="{{order.express_no}}">复制</text>
+                </view>
+            </view>
+        </navigator>
+
+        <view class="block flex-row ml-30 mr-30 mt-30" wx:if="{{order.is_offline==1}}">
+            <view class="flex-grow-1">
+                <view class="flex-grow-1">门店名称：{{order.shop.name}}</view>
+                <view class="flex-grow-1">联系电话：{{order.shop.mobile}}</view>
+                <view class="flex-grow-1">门店地址：{{order.shop.address}}</view>
+            </view>
+            <view class="flex-grow-0 flex-y-center" wx:if="{{order.shop.longitude}}">
+                <text bindtap="location" class="copy-text-btn">导航</text>
+            </view>
+        </view>
+
+    <view class="block ml-30 mr-30 mt-30">
+        <view class="title">支付信息</view>
+        <view class="flex-row block-row">
+            <view class="flex-grow-1 ltitle">支付方式</view>
+            <view class="flex-grow-0 con" wx:if="{{order.pay_type==0}}">未支付</view>
+            <view class="flex-grow-0 con" wx:if="{{order.pay_type==1}}">微信支付</view>
+            <view class="flex-grow-0 con" wx:if="{{order.pay_type==2}}">货到付款</view>
+            <view class="flex-grow-0 con" wx:if="{{order.pay_type==3}}">账户余额支付</view>
+        </view>
+        <view class="flex-row block-row">
+            <view class="flex-grow-1 ltitle">订单金额</view>
+            <view class="flex-grow-0 con" wx:if="{{order}}">￥{{order.goods_total_price}}</view>
+            <view class="flex-grow-0 con" wx:else>￥0.00</view>
+        </view>
+        <view class="flex-row block-row">
+            <view class="flex-grow-1 ltitle">运费</view>
+            <view class="flex-grow-0 con">￥{{order.express_price}}</view>
+        </view>
+        <view class="flex-row block-row">
+            <view class="flex-grow-1 ltitle">实际支付</view>
+            <view class="flex-grow-0 con" style="color:#FD5757;">￥{{order.pay_price}}</view>
+        </view>
+        <view class="flex-row block-row">
+            <view class="flex-grow-1 ltitle">备注</view>
+            <view class="flex-grow-0 con">无</view>
+        </view>
+        <view class="flex-row block-row" style="display: none;">
+            <view class="flex-grow-1">商品数量</view>
+            <view class="flex-grow-0">{{order.num}}件</view>
+        </view>
+        <view class="flex-row block-row" wx:if="{{user_coupon_id}}"  style="display: none;">
+            <view class="flex-grow-1">优惠券优惠</view>
+            <view class="flex-grow-0">-￥{{order.coupon_sub_price}}</view>
+        </view>
+        <view class="flex-row block-row" wx:if="{{order.discount<10&&order.discount}}"  style="display: none;">
+            <view class="flex-grow-1">会员折扣</view>
+            <view class="flex-grow-0">{{order.discount}}折</view>
+        </view>
+        <view class="flex-row block-row" wx:if="{{order.before_update}}"  style="display: none;">
+            <view class="flex-grow-1">{{order.before_update}}</view>
+            <view class="flex-grow-0">￥{{order.money}}</view>
+        </view>
+        <view wx:if="{{order.content}}"  style="display: none;">
+            <view>买家留言</view>
+            <view style="width:100%;overflow:auto;word-wrap:break-word;">{{order.content}}</view>
+        </view>
+        <view wx:if="{{order.words}}"  style="display: none;">
+            <view>商家留言</view>
+            <view class="fs-sm" style="width:100%;overflow:auto;word-wrap:break-word;">{{order.words}}</view>
+        </view>
+    </view>
+
+    <view class="block ml-30 mr-30 mt-30">
+        <view class="title">订单信息</view>
+        <view class="block-row flex-row">
+            <view class="flex-grow-1 ltitle">订单编号</view>
+            <view class="flex-grow-0 con">{{order.order_no}}</view>
+            <view class="flex-grow-0 con">
+                <text bindtap="copyText" class="copy-text-btn ml-30" data-text="{{order.order_no}}" style="color: #333333;">复制</text>
+            </view>
+        </view>
+        <view>订单时间：{{order.addtime}}</view>
+    </view>
+    <view wx:if="{{order.status == 0}}" class="contact ml-30 mt-30">联系卖家</view>
+    <view wx:if="{{order.status == 1}}" class="confirm ml-30 mt-30" bindtap="confirmReceive">确认收货</view>
+    <view wx:if="{{order.status == '订单未付款'}}" class="goto_pay ml-30 mt-30" bindtap="goto_pay">立即支付</view>
+    <view wx:if="{{order.status == '订单未付款'}}" class="cancel ml-30 mt-30" bindtap="cancelOrder">取消订单</view>
+    <view class="mb-30"></view>
+</view>

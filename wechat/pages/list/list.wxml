@@ -1,0 +1,117 @@
+<wxs src="../../tools.wxs" module="tools"></wxs>
+<view class="page {{__page_classes}}">
+    <include src="/commons/header/header"></include>
+    <view class="body after-navber">
+        <view class="sort_tab">
+            <view class="sort_list flex_row_nowrap align_center">
+                <view bindtap="toggleClassify" data-classify="0" class="flex-grow-0 ml-30 mr-30 sort_tab_item {{classify==0?'active':''}}">
+                    <text>商品</text>
+                </view>
+                <view bindtap="toggleClassify" data-classify="1" class="flex-grow-0 ml-30 mr-30 sort_tab_item  {{classify==1?'active':''}}">
+                    <text>店铺</text>
+                </view>
+            </view>
+        </view>
+        
+    </view>
+    <include src="/commons/footer/footer"></include>
+</view>
+<view class="goods" style="margin-top: {{marginTop}}rpx;">
+    <swiper class="goods_toggle" bindchange="toggleClassify" scroll-x="true" current="{{classify}}">
+        <swiper-item class="goods_item">
+            <view class="flex-row sort-bar space_around">
+                <view bindtap="sortClick" class="flex-x-center flex-y-center sort-item {{sort==0?'active':''}}" data-sort="0">
+                    <view class="title">综合</view>
+                </view>
+                <view bindtap="sortClick"  class="flex-x-center flex-row sort-item {{sort==2?'active':''}}" data-default_sort_type="0" data-sort="2">
+                    <view class="flex-y-center">
+                        <view class="title">价格</view>
+                        <image  wx:if="{{sort==2&&sort_type==1}}" src="{{img_url}}/dplb_ic_xl1.png"></image>
+                        <image  wx:elif="{{sort==2&&sort_type==0}}" src="{{img_url}}/dplb_ic_xl2.png"></image>
+                        <image  wx:else src="{{img_url}}/dplb_ic_xl3.png"></image>
+                    </view>
+                </view>
+                <view bindtap="sortClick" class="flex-x-center flex-y-center sort-item {{sort==3?'active':''}}" data-sort="3">
+                    <view class="title">销量</view>
+                </view>
+            </view>
+            <scroll-view class="scroll" scrollY="true"  bindscroll="toggleState">
+                <view class="goods-list flex_row_wrap space_between align_center">
+                    <view wx:if="{{banner_list.length>10000}}" style="width:100%;padding-bottom:4px;">
+                        <swiper autoplay="true" circular="true" class="banner" duration="300" indicatorDots="true" interval="5000">
+                            <swiper-item wx:for="{{banner_list}}">
+                                <navigator  hover-class="none"  bindtap="navigatorClick" data-open_type="{{item.open_type}}" data-url="{{item.page_url}}" openType="{{item.open_type?item.open_type:'navigator'}}" url="{{item.page_url}}">
+                                    <view class="slide-title">{{item.title}}</view>
+                                    <image class="slide-image" mode="aspectFill" src="{{item.pic_url}}"></image>
+                                </navigator>
+                            </swiper-item>
+                        </swiper>
+                    </view>
+                    <view class="no-data-tip" wx:if="{{show_no_data_tip}}">该类目暂无内容</view>
+                    <navigator  hover-class="none"  class="goods-item" openType="navigate" style="font-size:11pt;" url="/pages/goods/goods?id={{item.id}}" wx:for="{{goods_list}}" wx:key="index">
+                        <view class="goods-pic flex_row_nowrap space_center align_center" >
+                            <image mode="aspectFill" src="{{item.pic_url}}"></image>
+                        </view>
+                        <view class="goods-info">
+                            <view class="goods_name text">
+                                <text>{{item.name}}</text>
+                            </view>
+                            <view class="goods_price  flex_row_nowrap space_between align_center">
+                                <view>
+                                  <text class="font-tag-title color-price">￥{{tools.sub(item.price)}}</text>
+                                  <text wx:if="{{item.original_price}}" class="font-assist-text color-h4 line-through" style="margin:0 15rpx;">￥{{tools.sub(item.original_price)}}</text>
+                                </view>
+                                <text class="font-assist-text color-h4">{{item.sales}}已买</text>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+                <view class="loading-bar {{show_loading_bar?'active':''}}" style="text-align: center">
+                    <image src="{{img_url}}/loading.svg" style="width: 160rpx;height: 80rpx"></image>
+                </view>
+            </scroll-view>
+        </swiper-item>
+        <swiper-item  class="goods_item">
+            <view class="top-bar">
+                <view class="flex-row sort-bar">
+                    <view bindtap="toggleStore" class="flex-grow-1 flex-x-center flex-y-center sort-item {{store_toggle==0?'active':''}}" data-sort="0">
+                        <view class="title">综合</view>
+                    </view>
+                    <view bindtap="toggleStore" class="flex-grow-1 flex-x-center flex-y-center sort-item {{store_toggle==1?'active':''}}" data-sort="1">
+                        <view class="title">销量</view>
+                    </view>
+                    <view bindtap="toggleStore" class="flex-grow-1 flex-x-center flex-y-center sort-item {{store_toggle==2?'active':''}}" data-sort="2">
+                        <view class="title">最新</view>
+                    </view>
+                </view>
+            </view>
+            <scroll-view  class="scroll" scrollY="true" bindscroll="toggleState">
+                <view class="store">
+                    <view class="store_item" wx:for="{{store_list}}" wx:key="index" wx:if="{{item.goods_count>0}}" style="background:{{item.mch_color}}">
+                    <image class="store-bg" src="{{item.header_bg}}"></image>
+                        <view class="store_info flex_row_nowrap align_center">
+                            <navigator class="flex-grow-0 flex_row_nowrap align_center" hover-class="none" openType="navigate" url="/mch/shop/shop?mch_id={{item.id}}">
+                            <image class="flex-grow-0 store_avatar" src="{{item.logo}}"></image>
+                            <view class="flex-grow-0">
+                                <view class="store_name">{{item.mch_name}}</view>
+                                <view class="store_num">共{{item.goods_count}}件商品</view>
+                            </view>
+                            </navigator>
+                        </view>
+                        <view class="store_goods  flex_row_nowrap align_center flex_start" wx:if="{{item.goods_list.length}}">
+                            <navigator hover-class="none" openType="navigate" url="/pages/goods/goods?id={{item.id}}"  wx:for="{{item.goods_list}}" wx:key="index">
+                                <view class="goods_arr flex-col align_center space_center">
+                                    <image class="goods_img" src="{{item.cover_pic}}"></image>
+                                    <view class="goods_price flex_row_nowrap align_center space_between">
+                                        <text class="font-tag-title color-price">￥{{tools.sub(item.price)}}</text>
+                                        <text wx:if="{{item.original_price}}"  wx:if="{{item.original_price}}" class="font-assist-text color-h4 line-through" style="margin-left: 15rpx;">￥{{tools.sub(item.original_price)}}</text>
+                                    </view>
+                                </view>
+                            </navigator>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </swiper-item>
+    </swiper>
+</view>

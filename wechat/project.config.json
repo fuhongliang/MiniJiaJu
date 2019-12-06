@@ -1,0 +1,248 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.0",
+	"appid": "wxb3ffb451f1ebdd02",
+	"projectname": "%E4%B8%80%E7%89%A9%E4%B8%80%E7%BE%8E",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 28,
+			"list": [
+				{
+					"id": 0,
+					"name": "商品列表",
+					"pathName": "pages/list/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "家居分类",
+					"pathName": "pages/cat/cat",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "购物车",
+					"pathName": "pages/cart/cart",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "商品详情",
+					"pathName": "pages/goods/goods",
+					"query": "id=59",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "我的订单",
+					"pathName": "order/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "我的收货地址",
+					"pathName": "address/address/address",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "新增地址",
+					"pathName": "pages/address-edit/address-edit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "订单详情",
+					"pathName": "order/order-detail/order-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发现",
+					"pathName": "pages/discover/discover",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "我的收藏",
+					"pathName": "subpages/favorite/favorite",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 11,
+					"name": "我的图文",
+					"pathName": "pages/graphic/graphic",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 12,
+					"name": "发布图文",
+					"pathName": "pages/publich-graphic/publich-graphic",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 18,
+					"name": "查看图文或者装修方案的简要信息",
+					"pathName": "pages/brief-info/brief-info",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 15,
+					"name": "新首页",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 17,
+					"name": "我的",
+					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 16,
+					"name": "商家主页",
+					"pathName": "mch/shop/shop",
+					"query": "mch_id=4",
+					"scene": null
+				},
+				{
+					"id": 16,
+					"name": "确认订单",
+					"pathName": "order/order-submit/order-submit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 17,
+					"name": "我的收藏",
+					"pathName": "subpages/favorite/favorite",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 18,
+					"name": "订单列表",
+					"pathName": "order/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 20,
+					"name": "新人专享",
+					"pathName": "activities/new-exclusive/new-exclusive",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 21,
+					"name": "我的优惠券",
+					"pathName": "subpages/my-evaluate/my-evaluate",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 22,
+					"name": "邀请有奖分享",
+					"pathName": "activities/invitation-share/invitation-share",
+					"query": "id=6",
+					"scene": null
+				},
+				{
+					"id": 23,
+					"name": "邀请有奖领取",
+					"pathName": "pages/ymyw/invitation-get/invitation-get",
+					"query": "id=6",
+					"scene": null
+				},
+				{
+					"id": 24,
+					"name": "联系设计师",
+					"pathName": "subpages/contact-designer/contact-designer",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 25,
+					"name": "提交成功",
+					"pathName": "subpages/success-submission/success-submission",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "确认订单",
+					"pathName": "order/order-submit/order-submit",
+					"query": "goods_id=59& attr={attr_group_id:1, attr_group_name:\"规格\", attr_id:1, attr_name: \"默认\"}& num=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单详情",
+					"pathName": "order/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "家居家装",
+					"pathName": "pages/list/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "选择城市",
+					"pathName": "pages/select-city/select-city",
+					"scene": null
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,158 @@
+.tab_bar_container{
+    width: 750rpx;
+    height: 118rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-bottom: 1rpx solid #e3e3e3;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.tab-bar {
+    height: 118rpx;
+    width:1000rpx;
+}
+
+.tab-bar-item{
+    padding: 0 25rpx;
+}
+
+.tab-bar-item .tab-bar-item-text {
+    display: block;
+    text-align: center;
+}
+
+.tab-bar-item text {
+    font-size: 32rpx;
+    color: #666666;
+    font-family: "microsoft yahei";
+    padding: 20rpx 0;
+}
+
+.tab-bar-item.active text {
+    color: #000000;
+    font-weight: bold;
+    border-bottom:4rpx solid #0EC262;
+}
+.order-list {
+    margin-top: 148rpx;
+}
+
+.order-list .order-item {
+    background: #fff;
+    padding: 30rpx 30rpx;
+    margin-bottom: 30rpx;
+    border-bottom: 1rpx solid #e3e3e3;
+}
+
+.order-list .order-info {
+    font-size: 9pt;
+    color: #888;
+}
+
+.goods-item {
+    background: #fff;
+    border-bottom: 1rpx solid #e3e3e3;
+    padding: 32rpx 0;
+    border-bottom: 1rpx solid #eee;
+    margin: 20rpx 0;
+}
+.business_avatar{
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    margin-right: 15rpx;
+}
+.arrow{
+    width: 10rpx;
+    height: 16rpx;
+    margin-left: 15rpx;
+}
+.goods-item:first-child {
+    border-top: 1rpx solid #eee;
+}
+
+.goods-item .goods-pic {
+    width: 156rpx;
+    height: 156rpx;
+    margin-right: 20rpx;
+}
+
+.goods-item .goods-name {
+    width: 500rpx;
+    margin-bottom: 10rpx;
+    color: #333333;
+    font-size: 34rpx;
+}
+
+.goods-item .attr-list,.goods-item .num {
+    font-size: 28rpx;
+    color: #999999;
+}
+
+.goods-item .attr-list .attr-item {
+    display: inline-block;
+    margin-right: 36rpx;
+}
+
+.goods-item .attr-list .attr-item:last-child {
+    margin-right: 0;
+}
+
+.goods-item .price {
+    color: #FD5757;
+    font-size: 34rpx;
+}
+
+.order-option-btn {
+    border: 1rpx solid #bbb;
+    background: #fff;
+    border-radius: 30rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    margin-left: 30rpx;
+    padding: 0 30rpx;
+}
+.cancel{
+    border: 1rpx solid #E6E6E6;
+    color: #000000;
+    font-size:28rpx;
+}
+.goto_pay{
+    color:#0EC262;
+    border: 1rpx solid #0EC262;
+}
+.confirm{
+    color:#0EC262;
+    border: 1rpx solid #0EC262;
+}
+.order-option-btn::after {
+    display: none;
+}
+
+.return-index-btn {
+    position: fixed;
+    right: 0;
+    bottom: 100rpx;
+    display: inline-block;
+    background: rgba(157,157,157,0.5);
+    padding: 10rpx 20rpx;
+    z-index: 1000;
+    border-radius: 10rpx 0 0 10rpx;
+}
+
+.hide {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+}

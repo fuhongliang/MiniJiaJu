@@ -1,0 +1,22 @@
+.aboutus{
+    width: 750rpx;
+    height: auto;
+    background:#FFFFFF;
+}
+.company_name{
+    font-size: 36rpx;
+    color:#000000;
+    padding: 41rpx 0;
+}
+.publish_time{
+    font-size: 30rpx;
+    color: #666666;
+}
+.intro{
+    font-size: 30rpx;
+    color: #666666;
+    padding-top: 65rpx;
+    padding-bottom: 200rpx;
+    line-height: 55rpx;
+    text-align: justify;
+}

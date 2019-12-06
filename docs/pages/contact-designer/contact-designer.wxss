@@ -1,0 +1,43 @@
+.content{
+  width: 750rpx;
+  height: 458rpx;
+  background: #FFFFFF;
+  border-top:1rpx solid #E5E5E5;
+}
+.content_person,.content_phone{
+  height: 88rpx;
+  line-height: 88rpx;
+}
+.content_person,.content_phone,.content_msg{
+  width: 690rpx;
+  padding:0 30rpx;
+}
+.content_msg{
+  width: 690rpx;
+  height: 282rpx;
+}
+.btn{
+  width:690rpx;
+  text-align: center;
+  height:88rpx;
+  line-height: 88rpx;
+  background:#0EC262;
+  border-radius:44rpx;
+  font-size: 36rpx;
+  color: #FFFFFF;
+  margin-top: 81rpx;
+}
+
+.title{
+  font-size: 34rpx;
+  color: #000000;
+  width: 207rpx;
+}
+.placeholder{
+  color: #333333;
+  font-size: 34rpx;
+}
+.textarea{
+  width: 690rpx;
+  height: 282rpx;
+}

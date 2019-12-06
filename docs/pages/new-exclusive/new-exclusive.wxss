@@ -1,0 +1,109 @@
+.bg{
+  width: 750rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.content{
+  width: 750rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index:3;
+  margin-top: 1060rpx;
+}
+.goto_get{
+  width: 418rpx;
+  margin-left: 166rpx;
+}
+.evaluate{
+  width: 750rpx;
+}
+.evaluate_item{
+  width: 629rpx;
+  height: 200rpx;
+  margin-left: 60.5rpx;
+  margin-bottom: 40rpx;
+}
+.item_left{
+  width: 240rpx;
+  height: 200rpx;
+  position: relative;
+}
+.item_tags{
+  width: 240rpx;
+  height: 200rpx;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  z-index: 0;
+}
+.evaluate_content{
+  z-index: 2;
+}
+.evaluate_content .price{
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.item_right{
+  width: 389rpx;
+  height: 200rpx;
+  padding-left: 25rpx;
+  background: #FFFFFF;
+  position: relative;
+}
+.get_success{
+  width: 102rpx;
+  height: 89rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.rules{
+  font-size: 24rpx;
+  color: #FFFFFF;
+}
+.title{
+  font-size: 32rpx;
+  color: #000000;
+  font-weight: bold;
+}
+.days_rule{
+  font-size: 24rpx;
+  color: #666666;
+}
+.goto_get_text{
+  width:160rpx;
+  text-align: center;
+  height:52rpx;
+  line-height: 52rpx;
+  background:#4B93FE;
+  border-radius:25rpx;
+  color: #FFFFFF;
+  font-size: 28rpx;
+  margin-top: 32rpx;
+}
+.goto_get_text.active{
+  background:#FFFFFF;
+  color: #4B93FE;
+  border:1rpx solid #4B93FE;
+}
+.point_arrow{
+  width: 80rpx;
+}
+.point_title{
+  font-size: 32rpx;
+  color: #FE3E28;
+  margin: 48rpx 0;
+  font-weight: bold;
+  text-align: center;
+}
+.rules_content{
+  width: 603rpx;
+  text-align: justify;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  color: #624611;
+  margin-left: 73.5rpx;
+}

@@ -1,0 +1,150 @@
+<view class="container">
+    <view class="order_head">
+      <view class="status-bar flex_row_nowrap flex_start align_center" wx:if="{{order_status==0}}">
+          <image mode="aspectFill" src="/images/total/gz_ic_dfhh@2x.png"></image>
+          <view class="text">待发货</view>
+      </view>
+      <view class="status-bar flex_row_nowrap flex_start align_center" wx:if="{{order_status==1}}">
+          <image mode="aspectFill" src="/images/total/gz_ic_dsh@2x.png"></image>
+          <view class="text">待收货</view>
+      </view>
+      <view class="status-bar flex_row_nowrap flex_start align_center" wx:if="{{order_status==2}}">
+          <image mode="aspectFill" src="/images/total/gz_ic_dfkk@2x.png"></image>
+          <view class="text">待付款</view>
+      </view>
+      <view class="status-bar flex_row_nowrap flex_start align_center" wx:if="{{order_status==3}}">
+          <image mode="aspectFill" src="/images/total/gz_ic_ywcc@2x.png"></image>
+          <view class="text">已完成</view>
+      </view>
+      <view class="status-bar flex_row_nowrap flex_start align_center" wx:if="{{order_status==4}}">
+          <image mode="aspectFill" src="/images/total/gz_ic_yqxx@2x.png"></image>
+          <view class="text">已取消</view>
+      </view>
+      <view class="order_detail ml-30 mr-30 mt-30">
+          <view  wx:if="{{order_status==0}}" class="status_detail flex_row_nowrap align_center   ml-30">
+              <view class="status_detail_img flex-grow-0">
+                  <image src="/images/total/icon_ic_shouhdz@2x.png"></image>
+              </view>
+              <view class="flex-grow-1 ml-30">
+                  <view class="title fwb">[深圳市] 深圳市福田区分部已发出 </view>
+                  <view class="status_detail_name ltitle">
+                      <view class="flex-grow-1">2019-06-03 20:02</view>
+                  </view>
+              </view>
+          </view>
+          <!-- 待收货 -->
+          <view  wx:if="{{order_status==1}}" class="status_detail flex_row_nowrap align_center   ml-30">
+              <view class="status_detail_img flex-grow-0">
+                  <image src="/images/total/icon_ic_shouhdz@2x.png"></image>
+              </view>
+              <view class="flex-grow-1 ml-30">
+                  <view class="title fwb">您的订单正在配送途中，请耐心等待 </view>
+                  <view class="status_detail_name  ltitle">
+                      <view class="flex-grow-1">2019-06-03 20:02</view>
+                  </view>
+              </view>
+          </view>
+          <!-- 已完成 -->
+          <view  wx:if="{{order_status==3}}" class="status_detail flex_row_nowrap align_center   ml-30">
+              <view class="status_detail_img flex-grow-0">
+                  <image src="/images/total/icon_ic_shouhdz@2x.png"></image>
+              </view>
+              <view class="flex-grow-1 ml-30">
+                  <view class="title fwb">您的订单已由本人签收<text style="color:#0EC262"> [已签收]</text></view>
+                  <view class="status_detail_name ltitle">
+                      <view class="flex-grow-1">2019-06-03 20:02</view>
+                  </view>
+              </view>
+          </view>
+          <!-- 地址详情 -->
+          <view class="status_detail flex_row_nowrap align_center   ml-30">
+              <view class="status_detail_img flex-grow-0">
+                  <image src="/images/total/icon_ic_dingqianwsz.png"></image>
+              </view>
+              <view class="flex-grow-1 ml-30">
+                  <view class="title fwb">广州市天河区棠下街道岑村东街10号</view>
+                  <view class="status_detail_name flex_row_nowrap align_center ltitle">
+                      <view class="flex-grow-0 mr-30">张三</view>
+                      <view class="flex-grow-1">12345678900</view>
+                  </view>
+              </view>
+          </view>
+          <!--商家信息 -->
+          <view class="business flex_row_nowrap flex_start align_center ml-30">
+              <image class="business_avatar" src="/images/total/home_bnt_banner@2x.png"></image>
+              <view class="business_title">凯鹰厨卫</view>
+              <image class="business_arrow" src="/images/total/dingdan_jinru@2x.png"></image>
+          </view>
+          <!--商品信息 -->
+          <view class="goods pt-30 pb-30 ml-30 mr-30 flex_row_nowrap flex_start align_center">
+              <image class="goods_img" src="/images/total/home_bnt_banner@2x.png"></image>
+              <view class="ml-30">
+                  <view class="title goods_title">暖眠北欧三人沙发橡木家具</view>
+                  <view class="ltitle">白橡木 1800mm*2000mm</view>
+                  <view class="flex_row_nowrap align_center space_between mt-30">
+                      <view class="price-color">￥5999.00</view>
+                      <view>x 1</view>
+                  </view>
+              </view>
+          </view>
+      </view>
+  </view>
+  <!-- 支付信息 -->
+   <view class="pay_info ml-30 mr-30 mt-30">
+       <view class="pay_info_head h88 pr-30 pl-30 fwb">
+           支付信息
+       </view>
+       <view  hidden="{{order_status==2 || order_status==4}}"  class="pay_info_methods mr-30 ml-30 h66 flex_row_nowrap space_between align_center">
+           <view class="title">支付方式</view>
+           <view class="content">微信支付</view>
+       </view>
+       <view class="pay_info_account mr-30 ml-30 h66 flex_row_nowrap space_between align_center">
+           <view class="title">订单金额</view>
+           <view class="content">￥ 5999.00</view>
+       </view>
+       <view class="pay_info_freight mr-30 ml-30 h66 flex_row_nowrap space_between align_center">
+           <view class="title">运费</view>
+           <view class="content">￥ 0</view>
+       </view>
+       <view hidden="{{order_status==2||order_status==4}}" class="pay_info_real_money mr-30 ml-30 h66 flex_row_nowrap space_between align_center">
+           <view class="title">实际支付</view>
+           <view class="price-color">￥ 5999.00</view>
+       </view>
+       <view class="pay_info_remarks mr-30 ml-30 h66 flex_row_nowrap space_between align_center">
+           <view class="title">备注</view>
+           <view class="none">无</view>
+       </view>
+       <view>
+
+       </view>
+   </view>
+  <!-- 订单信息 -->
+   <view class="pay_info ml-30 mr-30 mt-30 mb-30">
+       <view class="pay_info_head h88 pr-30 pl-30 fwb">
+           订单信息
+       </view>
+       <view class="pay_info_account mr-30 ml-30 h66 flex_row_nowrap space_between align_center">
+           <view class="title">订单编号</view>
+           <view class="content flex_row_nowrap space_between align_center" style="width:450rpx">
+               <view>{{text}}</view>
+               <view class="copy" bindtap="copyText" data-text="{{text}}">复制</view>
+           </view>
+       </view>
+        <view class="pay_info_account mr-30 ml-30 h66 flex_row_nowrap space_between align_center">
+            <view class="title">订单时间</view>
+            <view class="content flex_row_nowrap space_between align_center">
+                <view>2019-06-06</view>
+                <view>19:37:50</view>
+            </view>
+        </view>
+   </view>
+
+   <!-- 按钮 -->
+   <view class="btn">
+       <view  wx:if="{{order_status==2}}" class="gb h88 w690 ml-30">立即支付</view>
+       <view  wx:if="{{order_status==0}}" class="gb h88 w690 ml-30 mt-30">联系卖家</view>
+       <view  wx:if="{{order_status==1}}" class="gb h88 w690 ml-30 mt-30">确认收货</view>
+       <view wx:if="{{order_status==2}}" class="wb h88 w690 ml-30 mt-30">取消订单</view>
+   </view>
+
+</view>

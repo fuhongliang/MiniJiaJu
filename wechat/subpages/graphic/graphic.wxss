@@ -1,0 +1,72 @@
+.graphic{
+    width: 750rpx;
+    height: 100%;
+    background: #FFFFFF;
+    border-top:1rpx solid #F2F2F2;
+}
+
+.graphic_list{
+    width: 690rpx;
+    margin:0  30rpx;
+}
+.graphic_item_container{
+    
+}
+.graphic_item{
+    width: 690rpx;
+    padding-bottom: 30rpx;
+}
+
+.home_img{
+    width: 690rpx;
+    height: 300rpx;
+}
+.item_img{
+    width: 690rpx;
+}
+
+.item_title{
+    color: #333333;
+    font-size: 32rpx;
+    margin-top: 15rpx;
+}
+
+.users_info{
+    margin-top: 15rpx;
+}
+
+.users_info image{
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+}
+
+.time,.users_name{
+    color: #999999;
+    font-size: 28rpx;
+    margin-left: 15rpx;
+}
+
+.nomore{
+    text-align: center;
+    line-height: 60rpx;
+    color: #999999;
+    font-size: 30rpx;
+}
+.notice{
+    background: #0EC262;
+    color: #FFFFFF;
+    font-size: 28rpx;
+    width: 750rpx;
+    height: 66rpx;
+}
+.delete{
+    width: 96rpx;
+    height: 66rpx;
+    margin-top: 100rpx;
+    padding-left:30rpx;
+}
+.delete image{
+    width: 66rpx;
+    height: 66rpx;
+}

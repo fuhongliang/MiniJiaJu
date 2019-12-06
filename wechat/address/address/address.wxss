@@ -1,0 +1,58 @@
+.bottom-bar {
+    position: fixed;
+    bottom: 0rpx;
+    left: 0;
+    height: 88rpx;
+    width: 100%;
+    z-index: 1000;
+    background: #0EC262;
+}
+
+.bottom-bar navigator {
+    width: 750rpx;
+}
+
+.address-list {
+    padding-bottom: 100rpx;
+}
+
+.address-item {
+    background: #fff;
+    margin-bottom: 30rpx;
+    padding: 32rpx 24rpx;
+}
+
+.userinfo {
+    margin-bottom: 30rpx;
+    font-size: 30rpx;
+    color: #000000;
+}
+
+.address-detail {
+    margin-bottom: 30rpx;
+    font-size: 26rpx;
+    color: #666666;
+}
+
+.address-option {
+    margin-left: 48rpx;
+}
+
+.address-option image {
+    width: 28rpx;
+    height: 28rpx;
+    margin-right: 16rpx;
+}
+
+.default-address {
+    width: auto;
+    color: #333333;
+    text-align: left;
+    font-size: 26rpx;
+}
+
+.address-change image{
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 15rpx;
+}

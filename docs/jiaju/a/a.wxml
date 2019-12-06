@@ -1,0 +1,13 @@
+<view class="aboutus">
+  <view class="aboutus_container pl-30 pr-30">
+      <view class="company_name fwb">一美一物</view>
+      <view class="publish_time">发布时间： 2019-06-10</view>
+  </view>
+  <view class="intro pl-30 pr-30">
+        abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+0123456789.:,;()*!?'@
+  </view>
+</view>
+
+

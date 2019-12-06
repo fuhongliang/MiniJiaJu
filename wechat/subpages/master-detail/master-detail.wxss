@@ -1,0 +1,18 @@
+/* pages/master-detail/master-detail.wxss */
+.calltel{position: fixed;bottom: 0;left: 0;width: 100%;height: 90rpx;line-height:90rpx;color:#fff;background-color: #FEAC1C;text-align: center;font-size: 32rpx;border-radius: 0;}
+.master-detail{margin-bottom: 110rpx;}
+.calltel:after{border:none 0;}
+.master-detail .con1{background-image: -webkit-linear-gradient(0deg, #FFAD1B, #FFCE12);height: 240rpx;padding: 66rpx 30rpx;}
+.master-detail .con1 image{width: 116rpx;height: 116rpx;border-radius: 100%;float: left;}
+.master-detail .con1 >view{margin-left: 150rpx;color: #fff;line-height: 2;}
+.master-detail .con1 .v1{}
+.master-detail .con1 .v2{font-size: 28rpx;}
+.master-detail .con1 .v2 text{margin-right: 40rpx;}
+.master-detail .con2{padding: 30rpx;background: #fff;font-size: 28rpx;}
+.master-detail .con2 text{display: inline-block;padding: 2rpx 8rpx;line-height: 1; color:#F07B74 ;background: #FCEEED;border: 1px solid #F07B74;border-radius: 4rpx;margin-right: 8rpx;font-size: 24rpx;}
+.master-detail .con3{margin-top: 10rpx;padding: 0 30rpx 60rpx;background: #fff;}
+.master-detail .con3 .title{font-size: 32rpx;line-height: 3;border-bottom: 1px solid #eee;}
+.master-detail .con3 .more{padding: 16rpx 0;}
+.master-detail .con3 .more image{display: block;margin: 10rpx auto;max-width: 100%;width: auto;}
+.master-detail .con3 .more view{margin-top: 20rpx;font-size: 24rpx;color: #666;}
+.master-detail .con3 .more text{font-size: 28rpx;color: #000;}

@@ -1,0 +1,141 @@
+.tab_bar_container{
+    width: 750rpx;
+    height: 118rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-bottom: 1rpx solid #e3e3e3;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.tab-bar {
+    height: 118rpx;
+    width:1000rpx;
+}
+.tab-bar-item{
+    padding: 0 25rpx;
+}
+
+.tab-bar-item .tab-bar-item-text {
+    display: block;
+    text-align: center;
+}
+
+.tab-bar-item text {
+    font-size: 30rpx;
+    color: #666666;
+    font-family: "microsoft yahei";
+    padding: 20rpx 0;
+}
+
+.tab-bar-item.active text {
+    color: #000000;
+    border-bottom:4rpx solid #0EC262;
+}
+.order-list {
+    margin-top: 148rpx;
+}
+
+.order-list .order-item {
+    background: #fff;
+    padding: 20rpx 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.order-list .order-info {
+    font-size: 9pt;
+    color: #888;
+}
+
+.goods-item {
+    background: #fff;
+    border-bottom: 1rpx solid #F2F2F2;
+    padding: 24rpx 0;
+}
+.business_avatar{
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    margin-right: 15rpx;
+    border:1rpx solid #F2F2F2;
+}
+.arrow{
+    width: 10rpx;
+    height: 16rpx;
+    margin-left: 15rpx;
+}
+.btn-container{
+    margin-top: 16rpx;
+}
+.goods-item:first-child {
+    border-top: 1rpx solid #eee;
+}
+.goods-img-container{
+    width: 154rpx;
+    height: 154rpx;
+    margin-right: 20rpx;
+}
+.goods-item .goods-pic {
+    width: 154rpx;
+    height: 154rpx;
+}
+
+.goods-item .goods-name {
+    width: 500rpx;
+    margin-bottom: 10rpx;
+}
+
+.goods-item .attr-list .attr-item {
+    display: inline-block;
+    margin-right: 36rpx;
+}
+.goods-item .attr-list .attr-item:last-child {
+    margin-right: 0;
+}
+
+.logistics,.cancel,.goto_pay,.confirm{
+    background: #fff;
+    text-align: center;
+    border-radius: 30rpx;
+    height: 60rpx;
+    margin-left: 30rpx;
+    padding: 0 30rpx;
+    border-width: 1rpx;
+    border-style: solid;
+}
+.logistics-color{
+  border-color:#E6E6E6;
+}
+.confirm-color{
+    border-color: #0EC262;
+}
+
+.return-index-btn {
+    position: fixed;
+    right: 0;
+    bottom: 100rpx;
+    display: inline-block;
+    background: rgba(157,157,157,0.5);
+    padding: 10rpx 20rpx;
+    z-index: 1000;
+    border-radius: 10rpx 0 0 10rpx;
+}
+
+.hide {
+    display: none;
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+}
+button::after{
+    border:none!important;
+}

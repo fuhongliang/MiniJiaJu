@@ -1,0 +1,70 @@
+<wxs module="tools" src="../../tools.wxs"></wxs>
+<view class="evaluate">
+  <view class="evaluate_head flex_row_nowrap align_center font-32">
+    <view bindtap="toggleType" class="evaluate_head_item flex-grow-1 {{current==0?'active':''}}" data-id="0"><text>未使用</text></view>
+    <view bindtap="toggleType" class="evaluate_head_item flex-grow-1 {{current==1?'active':''}}" data-id="1"><text>已使用</text></view>
+    <view bindtap="toggleType" class="evaluate_head_item flex-grow-1 {{current==2?'active':''}}" data-id="2"><text>已过期</text></view>
+  </view>
+</view>
+<swiper class="evaluate_list" bindchange="toggleType" current="{{current}}">
+  <swiper-item>
+    <scroll-view scrollY="true" class="evaluate_scroll">
+      <view>
+        <view class="evaluate_item ml-30 mt-30 flex_row_nowrap space_between align_center" wx:for="{{no_use}}" wx:key="index">
+          <view class="item_left  flex_row_nowrap space_center align_center">
+            <image mode="widthFix" class="item_tags" src="{{img_url}}/youhuiq_bnt@2x.png"></image>
+            <view class="evaluate_content  flex_column_wrap space_between align_center">
+              <view class="price"><text style="font-size: 30rpx;text-align: left;">￥</text><text  style="font-size: 72rpx;text-align: center;">{{tools.sub(item.sub_price)}}</text></view>
+              <view class="rules">{{item.content}}</view>
+            </view>
+          </view>
+          <view class="item_right  flex_column_wrap space_center">
+            <view class="title text">{{item.coupon_title}}</view>
+            <view class="days_rule mt-30">{{item.show_time}}</view>
+            <view class="goto_get_text"><navigator url="/pages/list/list">去使用</navigator></view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scrollY="true" class="evaluate_scroll">
+      <view>
+        <view class="evaluate_item ml-30 mt-30 flex_row_nowrap space_between align_center" wx:for="{{used}}" wx:key="index">
+          <view class="item_left  flex_row_nowrap space_center align_center">
+            <image mode="widthFix" class="item_tags" src="{{img_url}}/youhuiq_bnt_hui@2x.png"></image>
+            <view class="evaluate_content  flex_column_wrap space_between align_center">
+              <view class="price"><text style="font-size: 30rpx;text-align: left;">￥</text><text  style="font-size: 72rpx;text-align: center;">{{tools.sub(item.sub_price)}}</text></view>
+              <view class="rules">{{item.content}}</view>
+            </view>
+          </view>
+          <view class="item_right flex_column_wrap space_center">
+            <view class="title text">{{item.coupon_title}}</view>
+            <view class="days_rule">{{item.show_time}}</view>
+            <image class="get_success" src="{{img_url}}/youhuiq_ic_yisy@2x.png"></image>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scrollY="true" class="evaluate_scroll">
+      <view>
+        <view class="evaluate_item ml-30 mt-30 flex_row_nowrap space_between align_center" wx:for="{{outdate}}" wx:key="index">
+          <view class="item_left  flex_row_nowrap space_center align_center">
+            <image mode="widthFix" class="item_tags" src="{{img_url}}/youhuiq_bnt_hui@2x.png"></image>
+            <view class="evaluate_content  flex_column_wrap space_between align_center">
+              <view class="price"><text style="font-size: 30rpx;text-align: left;">￥</text><text  style="font-size: 72rpx;text-align: center;">{{tools.sub(item.sub_price)}}</text></view>
+              <view class="rules">{{item.content}}</view>
+            </view>
+          </view>
+          <view class="item_right flex_column_wrap space_center">
+            <view class="title text">{{item.coupon_title}}</view>
+            <view class="days_rule">{{item.show_time}}</view>
+            <image class="get_success" src="{{img_url}}/youhuiq_ic_yigqq@2x.png"></image>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>

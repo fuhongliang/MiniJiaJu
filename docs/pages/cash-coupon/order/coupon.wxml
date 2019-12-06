@@ -1,0 +1,39 @@
+<view class="top-bar flex-row">
+    <navigator class="flex-grow-1 {{status==1?'active':''}}" openType="redirect" url="/pages/cash-coupon/order/coupon?status=1">
+        <text>未使用</text>
+    </navigator>
+    <navigator class="flex-grow-1 {{status==3?'active':''}}" openType="redirect" url="/pages/cash-coupon/order/coupon?status=3">
+        <text>已使用</text>
+    </navigator>
+</view>
+
+<view class="info">
+    <view  wx:if="{{list&&list.length>0}}" class="info-list" style="width:100%;">
+        <view class="info-one" wx:for="{{list}}" wx:for-item="coupon" wx:key="id">
+            <image src="{{img_url}}/icon-coupon-enabled.png" wx:if="{{coupon.order_status==1}}"></image>
+            <image src="{{img_url}}/icon-coupon-disabled.png" wx:if="{{coupon.order_status==3}}"></image>
+            <view class="info-content flex-row flex-x-center flex-y-center">
+                <view class="flex-grow-0">
+                    <view class="flex-row flex-y-bottom">
+                        <view class="flex-grow-0">￥</view>
+                        <view class="flex-grow-1" style="font-size:23pt;">{{coupon.cash_price}}</view>
+                    </view>
+                </view>
+                <view class="flex-grow-1" style="font-size:11pt">
+                    <view style="margin-left:16rpx;">
+                        <view style="margin-bottom:4rpx;">{{coupon.cash_coupon_code}}</view>
+                        <view>会员:{{coupon.share_tel}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="info-footer">
+                <view>
+                    <view>{{coupon.brand_list}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="flex-x-center" wx:if="{{list.length<=0}}">
+        <text style="margin-top:50rpx;">暂无抵扣券</text>
+    </view>
+</view>

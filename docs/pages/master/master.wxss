@@ -1,0 +1,80 @@
+
+.master{}
+.master .nav{overflow: hidden;background: #fff;margin-top: 10rpx;padding: 20rpx;}
+.master .nav .img{width: 116rpx;height: 116rpx;border-radius: 100%;float: left;margin-top: 10rpx;}
+.master .nav .con{margin-left: 140rpx;line-height: 2;}
+.master .nav .con .name{font-size: 30rpx;}
+.master .nav .con .type{font-size: 24rpx;border-bottom: 1px solid #eee;padding-bottom: 20rpx;overflow: hidden;line-height: 60rpx;}
+.master .nav .con .type text{margin-right: 40rpx;}
+.master .nav .con .type text.tel{margin: 0;float: right;width: 100rpx;color: #fff;background: #FEAC1C;border-radius: 4rpx;text-align: center;font-size: 30rpx;line-height: 2;}
+.master .nav .con .tab{padding: 16rpx 0 0;line-height: 50rpx;}
+.master .nav .con .tab text{display: inline-block;padding: 2rpx 8rpx;line-height: 1; color:#F07B74 ;background: #FCEEED;border: 1px solid #F07B74;border-radius: 4rpx;margin-right: 8rpx;font-size: 24rpx;}
+
+
+.search-input {
+    margin-left: 10rpx;
+    background-color: #fff;
+    line-height:2.55555556;
+    border-radius: 10rpx;
+}
+
+.search-btn {
+    line-height:2.55555556;
+    background-color: #ddd;
+    border-radius: 0 10rpx 10rpx 0;
+    padding: 0 30rpx;
+}
+.input{
+    padding-left: 10rpx;
+}
+input {
+    height: 2rem
+}
+
+.work-type{
+    margin-left:10rpx;
+    padding-right: 10rpx;
+}
+.payment {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 9999;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.pay-modal {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+}
+
+.pay-head {
+    height: 80rpx;
+    width: 100%;
+    color: #353535;
+    border-bottom: 1rpx #e2e2e2 solid;
+}
+
+.pay-block {
+    width: 100%;
+    height: 120rpx;
+    color: #999;
+    padding: 0 30rpx;
+    border-bottom: 1rpx #e2e2e2 solid;
+}
+
+.red {
+    color: #ff4544;
+}
+
+.pay-footer {
+    width: 100%;
+    height: 88rpx;
+    background-color: #ff4544;
+    color: #fff;
+}

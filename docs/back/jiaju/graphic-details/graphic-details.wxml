@@ -1,0 +1,20 @@
+<view class="graphic">
+   <view class="detail">
+       <image class="detail_img" mode="widthFix" src="/images/total/home_bnt_banner@2x.png"></image>
+       <view class=" pl-30 flex_row_nowrap flex_start align_center" style="margin-top: 22rpx;">
+           <image class="user_img flex-grow-0" src="/images/total/home_bnt_banner@2x.png"></image>
+           <view class="user_name flex-grow-1">Alice_Arisu</view>
+       </view>
+       <view class="pl-30 detail_title pr-30">
+           小姐姐的艺术公寓之：假装在北欧小姐姐的艺术公寓之：假装在北欧小姐姐的艺术公寓之：假装在北欧小姐姐的艺术公寓之：假装在北欧小姐姐的艺术公寓之：假装在北欧
+       </view>
+       <view class="ml-30 detail_time pb-30">
+           10分钟前
+       </view>
+   </view>
+   <view class="content">
+       二室二厅装修装饰布置必须确定布局的房子结构是否合理，这将直接影响后期使用效果和生活质量。例如隔音效果好的房间用作房间，客厅何减少门的开启确定厨房和炊具的位置，展示物品的选择，阳台是否开放。在二室二厅装修过程中应遵循：使用尽可能多的壁橱，吊柜和角柜作为改善，尽可能的利用空间，尽可能考虑自然采光，考虑预埋水，电，通讯，有线电视，音频等。
+   </view>
+</view>
+
+

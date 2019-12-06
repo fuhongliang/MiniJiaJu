@@ -1,0 +1,32 @@
+.about{
+    width: 750rpx;
+    border-top:1rpx solid #F2F2F2;
+}
+.collect_list{
+    width: 750rpx;
+    background: #FFFFFF;
+    padding: 30rpx;
+}
+.collect_item{
+    width: 330rpx;
+    margin-bottom: 35rpx;
+}
+.item_img image{
+    width: 330rpx;
+}
+.item_img{
+    width: 330rpx;
+    height: 330rpx;
+    border: 1rpx solid #F2F2F2;
+}
+.item_title{
+    width: 330rpx;
+    color: #000000;
+    font-size: 32rpx;
+    margin-top: 21rpx;
+}
+.item_price{
+    font-size: 34rpx;
+    color: #FD5757;
+    margin-top: 19rpx;
+}

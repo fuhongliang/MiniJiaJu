@@ -1,0 +1,19 @@
+<include src="/commons/navbar/navbar"></include>
+<view class="after-navber" style="height: 100%;background-color: #ffffff">
+
+    <view style="display: flex;flex-direction: column;padding: 20rpx 30rpx;">
+        <view class="current-city">
+            <image class="location" src="/images/icon-city-location.png"></image>
+            <text class="desc-text">当前选择地区</text>
+            <text class="current-city-text">{{current_district}}</text>
+        </view>
+        <view class="business-city">
+            <text>业务覆盖城市</text>
+        </view>
+        <view class="business-city-list">
+            <block  wx:for="{{district_list}}" wx:key="index">
+                <view bindtap="selectCity" data-district="{{item.name}}" class="item">{{item.name}}</view>
+            </block>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,28 @@
+<wxs module="tools" src="../../tools.wxs"></wxs>
+<view class="flex-col h-100" style="background: #F5F5F5;">
+    <view class="flex-grow-1 wh-100" style="position: absolute;top: 0;left: 0;z-index:0">
+        <scroll-view bindscrolltolower="goodsScrollBottom" class="h-100" lowerThreshold="1" scrollY="true">
+            <view class="goods-list flex_row_wrap space_between align_center">
+                <navigator class="goods-item" openType="navigate" url="/pages/goods/goods?id={{item.goods_id}}" wx:for="{{goods.list}}" wx:key="index">
+                    <view class="goods-pic flex_row_nowrap space_center align_center">
+                        <image src="{{item.goods_pic}}"></image>
+                    </view>
+                    <view class="goods-info flex_row_wrap space_between align_center">
+                        <view class="goods-name text-left text font-tag-title color-h2">{{item.name}}</view>
+                        <view class="flex-grow-1 flex-y-center">
+                            <text class="font-tag-title color-price">￥{{tools.sub(item.price)}}</text>
+                            <text wx:if="{{item.original_price}}" class="font-assist-text color-h4 line-through" style="margin-left: 10rpx;">￥{{tools.sub(item.original_price)}}</text>
+                        </view>
+                        <view class="flex-grow-0 font-assist-text color-h4">5688人已买</view>
+                    </view>
+                </navigator>
+            </view>
+            <view class="no-content" wx:if="{{!goods.list.length}}">
+                暂无收藏的商品
+            </view>
+            <view class="loading-more {{topic.is_loading?'active':''}}">
+                <image src="{{img_url}}/loading.svg"></image>
+            </view>
+        </scroll-view>
+    </view>
+</view>

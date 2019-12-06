@@ -1,0 +1,57 @@
+<view class="business">
+    <view class="body">
+        <view class="business_info flex_row_nowrap space_between align_center">
+            <view class="business_info_img flex_row_nowrap align_center space_center">
+                <image src="{{shop.logo}}"></image>
+            </view>
+            <view class="business_info_detail">
+                <view class="business_name">{{shop.name}}</view>
+                <view class="business_star flex_row_nowrap space_between align_center">
+                    <view class="star" wx:for="{{5}}"  wx:key="index"></view>
+                    <text>5.0</text>
+                </view>
+            </view>
+            <view class="business_info_follow" bindtap="toggleFollow">
+                <text wx:if="{{follow}}">取消关注</text>
+                <text wx:else>关注</text>
+            </view>
+        </view>
+        <view class="business_spec">
+            <view class="business_spec_head flex_row_nowrap align_center">
+                <view class="flex-grow-1 {{chooseSpec==0?'active':''}}" bindtap="toggleSpec">全部商品</view>
+                <view class="flex-grow-1 {{chooseSpec==1?'active':''}}" bindtap="toggleSpec">精选方案</view>
+            </view>
+        </view>
+    </view>
+</view>
+        <view class="goods_container">
+            <swiper class="business_spec_con" current="{{chooseSpec}}" bindchange="toggleBar"   duration="300">
+               <swiper-item class="business_items">
+                   <!-- 全部商品 -->
+                   <scroll-view scrollY="true" class="scroll" bindscrolltolower="loadData" lower-threshold="100">
+                       <view wx:if="{{chooseSpec==0}}" class="flex_row_wrap space_between align_center">
+                           <navigator wx:for="{{goods_list}}" wx:key="index" class="all_goods"  hover-class="none"  openType="navigate"  url="/pages/goods/goods?id={{item.id}}" >
+                                <view class="all_goods_img">
+                                    <image src="{{item.cover_pic}}"></image>
+                                </view>
+                                <view class="allGoods_title text">{{item.name}}</view>
+                                <view class="all_goods_price text">¥ {{item.price}}</view>
+                           </navigator>
+                       </view>
+                   </scroll-view>
+               </swiper-item>
+                <swiper-item class="business_items">
+                    <!-- 精选方案 -->
+                    <scroll-view  scrollY="true"  class="scroll" bindscrolltolower="loadData" lower-threshold="100">
+                        <view wx:if="{{chooseSpec==1}}" class="flex_column_wrap space_around">
+                            <view wx:for="{{goods_list}}" wx:key="index" class="cases">
+                                <view class="cases_img">
+                                    <image src="{{item.cover_pic}}"></image>
+                                </view>
+                                <view class="cases_title text">{{item.name}}</view>
+                            </view>
+                        </view>
+                    </scroll-view>
+                </swiper-item>
+            </swiper>
+        </view>

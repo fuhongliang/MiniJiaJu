@@ -1,0 +1,68 @@
+<view class="discover">
+   <view class="discover_bar flex_row_nowrap flex_start align_center {{mode==0?'active1':'active2'}}">
+     <view bindtap="toggleBar" class="h66 pl-30 pr-30 static {{mode==0?'active':''}}" data-mode="0">图文</view>
+     <view bindtap="toggleBar" class="h66 pl-30 pr-30 static {{mode==1?'active':''}}" data-mode="1">装修方案</view>
+     <view class="line"></view>
+   </view>
+<view class="content_container" >
+     <swiper class="content" current="{{mode}}" bindchange="toggleTypes"  duration="300">
+    <swiper-item class="swiper_item">
+      <scroll-view scrollY="true" class="h-100 scroll_view" bindscrolltolower="loadDiscover" lower-threshold="100">
+        <view class="discover_list1" wx:if="{{image_list1}}">
+          <view class="left">
+            <navigator  hover-class="none"  openType="navigate"  url="/subpages/brief-info/brief-info?id={{item.id}}" wx:for="{{image_list1}}" wx:key="index">
+              <view class="discover_item pb-30" >
+                  <image mode="widthFix" class="item_img" src="{{item.article_image[0]}}"></image>
+                <view class="item_content">
+                    {{item.article_content}}
+                </view>
+                <view class="item_info flex_row_nowrap flex_start align_center">
+                  <image class="item_info_img flex-grow-0" src="{{item.avatar_url}}"></image>
+                  <view class="item_name flex-grow-1">{{item.nickname}}</view>
+                  <view class="item_time flex-grow-0">{{item.created_at}}</view>
+                </view>
+              </view>
+            </navigator>
+          </view>
+          <view class="right">
+            <navigator  hover-class="none"  openType="navigate"  url="/subpages/brief-info/brief-info?id={{item.id}}"  wx:for="{{image_list2}}" wx:key="index">
+              <view class="discover_item pb-30">
+                <image mode="widthFix" class="item_img" src="{{item.article_image[0]}}"></image>
+                <view class="item_content">
+                  {{item.article_content}}
+                </view>
+                <view class="item_info flex_row_nowrap flex_start align_center">
+                  <image class="item_info_img flex-grow-0" src="{{item.avatar_url}}"></image>
+                  <view class="item_name flex-grow-1">{{item.nickname}}</view>
+                  <view class="item_time flex-grow-0">{{item.created_at}}</view>
+                </view>
+              </view>
+            </navigator>
+          </view>
+        </view>
+        <view class="nomore" wx:if="{{nomore}}">没有更多的数据了</view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item class="swiper_item">
+      <scroll-view scrollY="true"  class="h-100 scroll_view" bindscrolltolower="loadCases"  lower-threshold="100">
+        <view class="discover_list2" wx:if="{{cases}}">
+          <navigator   hover-class="none"  openType="navigate"  url="/pages/graphic-details/graphic-details?id={{item.id}}" wx:for="{{cases}}" wx:key="index">
+            <view class="cases_item" >
+                <image class="item_img" src="{{item.cover_pic}}"></image>
+              <view class="item_content text">
+                {{item.title}}
+              </view>
+              <view class="item_info flex_row_nowrap flex_start align_center">
+                <image class="item_info_img flex-grow-0" src="{{item.author_logo}}"></image>
+                <view class="item_name flex-grow-1">{{item.author}}</view>
+                <view class="item_time flex-grow-0">{{item.addtime}}</view>
+              </view>
+            </view>
+          </navigator>
+        </view>
+        <view class="nomore" wx:if="{{nomore}}">没有更多的数据了</view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>
+</view>

@@ -1,0 +1,37 @@
+<view class="page {{__page_classes}}">
+    <include src="/commons/header/header"></include>
+    <view class="body after-navber">
+        <view class="flex-row" style="height: 100%;">
+            <view class="flex-grow-0" style="height:100%;background: #fff">
+                <scroll-view class="cat-list" scrollY="true" style="height: 100%;width: 204rpx">
+                    <view bindtap="catItemClick" class="cat-item {{item.active?'active':''}} flex-y-center flex-x-center" data-index="{{index}}" wx:for="{{cat_list}}">
+                        <view class="cat-name">{{item.stc_name}}</view>
+                    </view>
+                </scroll-view>
+            </view>
+            <view id="cat" class="flex-grow-1" style="background: #f6dae1">
+                <view style="position: fixed;top:0rpx;left: 200rpx;bottom: 0;right: 0;z-index:0;overflow: hidden">
+                    <scroll-view class="sub-cat-box cat-block-list" scrollTop="{{sub_cat_list_scroll_top}}" scrollY="true" style="height: 100%;padding: 20rpx;padding-bottom: 115rpx">
+                        <view class="cat-small-style cat-num-3 flex-row">
+                            <block wx:if="{{current_cat}}">
+                                <navigator class="advert" url="{{current_cat.advert_url}}" wx:if="{{current_cat.advert_pic}}">
+                                    <image class="cat-icon" src="{{current_cat.advert_pic}}"></image>
+                                </navigator>
+                                <view class="flex-grow-0" wx:for="{{current_cat.child}}">
+                                    <navigator class="cat-item " url="/pages/jiaju/goods-list/list?cat_id={{item.stc_id}}">
+                                        <image class="cat-icon" src="{{item.icon_image}}"></image>
+                                        <view class="cat-name">{{item.stc_name}}</view>
+                                    </navigator>
+                                </view>
+                            </block>
+                        </view>
+                    </scroll-view>
+                </view>
+            </view>
+        </view>
+        <view class="loading-bar {{show_loading_bar?'active':''}}" style="text-align: center">
+            <image src="/images/loading.svg" style="width: 160rpx;height: 80rpx"></image>
+        </view>
+    </view>
+    <include src="/commons/footer/footer"></include>
+</view>

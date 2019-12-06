@@ -1,0 +1,14 @@
+<view class="brief">
+<swiper class="info_container">
+  <swiper-item class="info" wx:for="{{article_image}}" wx:key="index">
+    <view class="img_container flex_row_nowrap space_center align_center">
+        <image data-list="{{article_image}}" bindtap="previewImage" mode="widthFix" class="info_img" src="{{item}}" data-src="{{item}}"></image>
+    </view>
+  </swiper-item>
+</swiper>
+  <view class="content pl-30 pr-30">
+    {{info.article_content}}
+  </view>
+</view>
+
+

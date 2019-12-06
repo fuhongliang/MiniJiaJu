@@ -1,0 +1,20 @@
+<view class="graphic">
+   <scroll-view  scrollY="true" class="h-100" bindscrolltolower="loadGraphic" lower-threshold="100">
+       <view class="graphic_list">
+           <view class="graphic_item" wx:for="{{graphic}}" wx:key="index">
+               <view class="item_img flex_row_wrap align_center space_center">
+                   <image mode="widthFix" src="{{item.article_image[0]}}"></image>
+               </view>
+               <view class="item_title text">{{item.article_content}}</view>
+               <view class="users_info flex_row_nowrap align_center flex_start">
+                   <image class="flex-grow-0" src="{{item.avatar_url}}"></image>
+                   <view class="flex-grow-1 users_name">{{item.nickname}}</view>
+                   <view class="flex-grow-0 time">{{item.created_at}}</view>
+               </view>
+           </view>
+       </view>
+       <view wx:if="{{nomore}}" class="nomore">没有更多数据了</view>
+   </scroll-view>
+</view>
+
+

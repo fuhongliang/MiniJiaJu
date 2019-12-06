@@ -1,0 +1,39 @@
+<view class="discover">
+   <view class="discover_bar flex_row_nowrap flex_start align_center {{mode==0?'active1':'active2'}}">
+     <view bindtap="toggleBar" class="h66 pl-30 pr-30 static {{mode==0?'active':''}}">图文</view>
+     <view bindtap="toggleBar" class="h66 pl-30 pr-30 static {{mode==1?'active':''}}">装修方案</view>
+     <view class="line"></view>
+   </view>
+   <swiper class="content" style="height:{{height}}rpx" current="{{mode}}" bindchange="toggleTypes">
+     <swiper-item>
+       <view class="discover_list" wx:if="{{mode == 0}}">
+         <view class="discover_item" wx:for="{{image_text}}" wx:key="index">
+           <image mode="widthFix" class="item_img" src="{{item.pic_url}}"></image>
+           <view class="item_content">
+             {{item.content}}
+           </view>
+           <view class="item_info flex_row_nowrap flex_start align_center">
+             <image class="item_info_img flex-grow-0" src="{{item.person_img}}"></image>
+             <view class="item_name flex-grow-1">{{item.person_name}}</view>
+             <view class="item_time flex-grow-0">{{item.time}}</view>
+           </view>
+         </view>
+       </view>
+     </swiper-item>
+     <swiper-item>
+       <view class="discover_list" wx:if="{{mode == 1}}">
+         <view class="cases_item flex-grow-0" wx:for="{{cases}}" wx:key="index">
+           <image class="item_img flex-grow-1" src="{{item.pic_url}}"></image>
+           <view class="item_content flex-grow-0 text">
+             {{item.content}}
+           </view>
+           <view class="item_info flex_row_nowrap flex_start align_center">
+             <image class="item_info_img flex-grow-0" src="{{item.person_img}}"></image>
+             <view class="item_name flex-grow-1">{{item.person_name}}</view>
+             <view class="item_time flex-grow-0">{{item.time}}</view>
+           </view>
+         </view>
+       </view>
+     </swiper-item>
+   </swiper>
+</view>

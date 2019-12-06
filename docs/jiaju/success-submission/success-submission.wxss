@@ -1,0 +1,24 @@
+.icon{
+  width:200rpx;
+  height:200rpx;
+  margin-top: 150rpx;
+}
+.title{
+  color: #333333;
+  font-size: 34rpx;
+}
+.content{
+  font-size: 28rpx;
+  color: #999999;
+}
+.btn{
+  width:690rpx;
+  text-align: center;
+  height:88rpx;
+  line-height: 88rpx;
+  color: #FFFFFF;
+  font-size: 36rpx;
+  background:#0EC262;
+  border-radius:44rpx;
+  margin-top: 90rpx;
+}

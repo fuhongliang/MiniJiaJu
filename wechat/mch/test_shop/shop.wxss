@@ -1,0 +1,153 @@
+.business{
+    width: 750rpx;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 124;
+}
+.body{
+    width: 750rpx;
+    height: auto;
+    background: #F5F5F5;
+    position: relative;
+}
+/* business_info */
+.business_info{
+    width: 100%;
+    height: 150rpx;
+    border-top:1rpx solid #F2F2F2;
+    background: #FFFFFF;
+}
+.business_info_img{
+    width: 90rpx;
+    height: 90rpx;
+    margin-left: 30rpx;
+    border:1rpx solid #F2F2F2;
+}
+.business_info_img image{
+    width: 80rpx;
+    height: 80rpx;
+}
+.business_info_detail{
+    margin-left: 30rpx;
+    width: 450rpx;
+}
+.business_info_follow{
+    margin-right: 30rpx;
+    width:120rpx;
+    height:60rpx;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(14, 194, 98, 1);
+    border-radius:30rpx;
+    color:#0EC262;
+    font-size:28rpx;
+    text-align: center;
+    line-height: 60rpx;
+}
+.business_name{
+    color: #000000;
+    font-size: 34rpx;
+}
+.business_star{
+    width: 190rpx;
+    color: #333333;
+    font-size: 22rpx;
+    margin-top: 10rpx;
+}
+.business_spec{
+    margin-top: 30rpx;
+    width: 750rpx;
+    height: auto;
+    background: #FFFFFF;
+}
+.business_spec_head{
+    height: 88rpx;
+    line-height: 88rpx;
+    border-bottom:1rpx solid #F2F2F2;
+}
+
+.business_spec_head view{
+    font-size:34rpx;
+    color:#666666;
+    text-align: center;
+    height: 88rpx;
+}
+.business_spec_head .active{
+    font-weight:bold;
+    color:#000000;
+    border-bottom:4rpx solid #0EC262;
+    box-sizing: border-box;
+}
+.goods_container{
+  position: absolute;
+  top: 265rpx;
+  left: 0;
+  z-index: 123;
+  background: #FFFFFF;
+  width: 750rpx;
+  height: 100%;
+  overflow: hidden;
+}
+.business_items{
+    width: 750rpx;
+}
+.business_spec_con{
+    width: 750rpx;
+    padding:0 30rpx;
+    height: 100%;
+}
+.scroll{
+  width: 100%;
+  height: 100%;
+}
+.all_goods{
+    width: 330rpx;
+    height: 430rpx;
+    margin-top: 30rpx;
+}
+
+.all_goods_img{
+    width: 330rpx;
+    height: 330rpx;
+    border:2rpx solid #F2F2F2;
+    box-sizing: border-box;
+}
+.all_goods_img image{
+    width: 326rpx;
+    height: 326rpx;
+}
+.allGoods_title{
+    width: 330rpx;
+    font-size:32rpx;
+    font-weight:500;
+    color:#000000;
+    text-align: left;
+    margin-top:10rpx;
+}
+.all_goods_price{
+   width: 330rpx;
+   font-size:34rpx;
+   font-weight:bold;
+   color:#FD5757;
+   text-align: left;
+   margin-top:10rpx;
+}
+.cases{
+    
+}
+.cases_img{
+    width: 688rpx;
+    height: 300rpx;
+    margin-top: 30rpx;
+}
+.cases_img image{
+    width: 688rpx;
+    height: 300rpx;
+}
+.cases_title{
+    width: 688rpx;
+    font-size: 32rpx;
+    color: #333333;
+    line-height: 54rpx;
+}

@@ -1,0 +1,57 @@
+<view class="body after-navber">
+<view class="flex-y-center">
+  <view bindtap="showWorkType" class="flex-row work-type" style="line-height:2.55555556;">
+    <button style="line-height:2.55555556;" class="flex-grow-0">{{select_type}}</button>
+  </view>
+  <view class="search-input flex-row">
+    <input bindblur="inputBlur" bindconfirm="inputConfirm" bindfocus="inputFocus" bindinput="input" class="input flex-y-center flex-grow-1" confirmType="search" placeholder="请输入会员名" value="{{keyword}}"></input>
+    <view bindtap="search" class="search-btn flex-grow-0 flex-y-center flex-x-center flex-row">
+      <image class="flex-grow-0" src="/images/icon-shop-search.png" style="width:24rpx;height:24rpx;margin-right:10rpx;"></image>
+      <view class="flex-grow-1">搜索</view>
+    </view>
+  </view>
+</view>
+
+<view class='master' wx:if="{{list.length > 0}}">
+  <navigator url='/pages/master-detail/master-detail?id={{item.id}}' class='nav' wx:for="{{list}}">
+    <image class='img' src='{{item.cover_pic}}'></image>
+    <view class='con'>
+      <view class='name'>{{item.name}}</view>
+      <view class='type'><text class='tel' data-reply-phone='{{item.mobile}}' bindtap="phoneCall">联系</text>工种：<text>{{item.job}}</text>工龄：<text>{{item.year}}</text>
+        <block wx:if="{{item.auth_type.length > 0}}">
+          <view class='tab' >
+            <text wx:for="{{item.auth_type}}" style="{{item.style}}">{{item.value}}</text>
+          </view>
+        </block>
+      </view>
+      <view class='tab'><text>特点</text>{{item.advantage}}</view>
+    </view>
+  </navigator>
+</view>
+  <view class="search-result" wx:else>
+    <view wx:if="{{search_finish}}" class="flex-row flex-x-center" style="padding:36rpx 0;">
+      <view class="flex-row flex-y-center">
+        <view class="flex-grow-0" style="width:100rpx;height:100rpx;margin-right:40rpx;">
+          <image src="/images/icon-search-no.png" style="width:100rpx;height:100rpx;"></image>
+        </view>
+        <view class="flex-grow-1" style="color:#353535;">抱歉，暂时没有相关师傅</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="payment" wx:if="{{show_work_type}}">
+  <view class="pay-modal">
+    <view class="pay-head flex-x-center flex-y-center">请选择工种</view>
+    <view bindtap="payPicker" class="pay-block flex-row flex-y-center" data-index="{{item}}" wx:for="{{work_type}}">
+      <view class="flex-grow-0">
+        <image src="{{item.icon}}" style="width:72rpx;height:72rpx;margin-right:30rpx;"></image>
+      </view>
+      <view class="flex-grow-1 {{select_type==item?'red':''}}">{{item}}</view>
+      <view class="flex-grow-0" wx:if="{{select_type==item}}">
+        <image src="/images/icon-pay-right.png" style="width:34rpx;height:24rpx;"></image>
+      </view>
+    </view>
+    <view bindtap="payClose" class="pay-footer flex-x-center flex-y-center">关闭</view>
+  </view>
+</view>

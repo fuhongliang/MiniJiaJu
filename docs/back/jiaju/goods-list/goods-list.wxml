@@ -1,0 +1,51 @@
+<view class="page {{__page_classes}}">
+    <include src="/commons/header/header"></include>
+
+    <view class="body after-navber">
+        <view class="top-bar">
+            <view class="flex-row sort-bar">
+                <view bindtap="sortClick" class="flex-grow-1 flex-x-center flex-y-center sort-item {{sort==0?'active':''}}" data-sort="0">
+                    <view class="title">综合</view>
+                    <image wx:if="{{sort!=0}}" src="../../../images/total/icon_xiala@2x.png"></image>
+                    <image wx:else class="{{sort==0?'trans':''}}" src="../../../images/total/icon_xiala11@2x.png"></image>
+                </view>
+                <view bindtap="sortClick" class="flex-grow-1 flex-x-center flex-y-center sort-item {{sort==1?'active':''}}" data-sort="1">
+                    <view class="title">最新</view>
+                     <image wx:if="{{sort!=1}}" src="../../../images/total/icon_xiala@2x.png"></image>
+                    <image wx:else class="{{sort==1?'trans':''}}" src="../../../images/total/icon_xiala11@2x.png"></image>
+                </view>
+                <view bindtap="sortClick" class="flex-grow-1 flex-x-center flex-row sort-item {{sort==2?'active':''}}" data-default_sort_type="0" data-sort="2">
+                    <view class="flex-y-center">
+                        <view class="title">价格</view>
+                         <image wx:if="{{sort!=2}}" src="../../../images/total/icon_xiala@2x.png"></image>
+                        <image wx:else class="{{sort==2?'trans':''}}" src="../../../images/total/icon_xiala11@2x.png"></image>
+                    </view>
+                </view>
+                <view bindtap="sortClick" class="flex-grow-1 flex-x-center flex-y-center sort-item {{sort==3?'active':''}}" data-sort="3">
+                    <view class="title">销量</view>
+                     <image wx:if="{{sort!=3}}" src="../../../images/total/icon_xiala@2x.png"></image>
+                    <image wx:else class="{{sort==3?'trans':''}}" src="../../../images/total/icon_xiala11@2x.png"></image>
+                </view>
+            </view>
+        </view>
+
+        <view class="goods-list flex_row_wrap space_between">
+            <view class="no-data-tip" wx:if="{{show_no_data_tip}}">该类目暂无内容</view>
+            <navigator class="goods-item" openType="navigate" style="font-size:11pt;" url="/pages/jiaju/goods-details/goods-details?goods_id={{item.goods_id}}" wx:for="{{goods_list}}" wx:key="index">
+                <view class="goods-pic" >
+                    <image mode="aspectFill" src="{{item.goods_image}}"></image>
+                </view>
+                <view class="goods-info">
+                    <view class="goods_name text">
+                        <text>{{item.goods_name}}</text>
+                    </view>
+                    <view class="goods_price">￥{{item.goods_price}}</view>
+                </view>
+            </navigator>
+        </view>
+        <view class="loading-bar {{show_loading_bar?'active':''}}" style="text-align: center">
+            <image src="/images/loading.svg" style="width: 160rpx;height: 80rpx"></image>
+        </view>
+    </view>
+    <include src="/commons/footer/footer"></include>
+</view>

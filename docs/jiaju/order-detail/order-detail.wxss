@@ -1,0 +1,153 @@
+page {
+    overflow-x: hidden;
+}
+.container{
+    overflow: hidden;
+    width: 750rpx;
+    height: auto;
+}
+
+.order_head{
+    position: relative;
+    width: 750rpx;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background:linear-gradient(to bottom,#76EB70,#0EC262,rgba(245,245,245,0),rgba(245,245,245,0));
+}
+.order_head_img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 750rpx;
+    height: 410rpx;
+}
+.status-bar {
+    width: auto;
+    height: 164rpx;
+    box-sizing: border-box;
+    padding-top: 30rpx;
+    padding-bottom: 10rpx;
+}
+
+.status-bar image {
+    width: 124rpx;
+    height: 124rpx;
+    margin: 0 30rpx;
+}
+
+.status-bar .text{
+    color: #FFFFFF;
+    font-size: 48rpx;
+}
+
+
+.order_detail{
+    width: 690rpx;
+    background: #FFFFFF;
+    border-radius:10rpx;
+}
+
+.status_detail{
+    width: 660rpx;
+    height: 118rpx;
+    border-bottom: 1rpx solid #F2F2F2;
+}
+
+.status_detail_img{
+    width: 26rpx;
+    height: 26rpx;
+}
+
+.status_detail_img image{
+    width: 26rpx;
+    height: 26rpx;
+}
+
+.business{
+    width: 660rpx;
+    height: 86rpx;
+    line-height: 86rpx;
+    border-bottom: 1rpx solid #F2F2F2;
+}
+
+.business_avatar{
+    width: 40rpx;
+    height: 40rpx;
+    border-radius:50%;
+}
+
+.business_title{
+    margin:0 15rpx;
+    font-size: 30rpx;
+    color: #000000;
+}
+
+.business_arrow{
+    width: 10rpx;
+    height: 16rpx;
+}
+
+.goods_img{
+    width: 154rpx;
+    height: 154rpx;
+}
+
+.goods_title{
+    width: 450rpx;
+    height: auto;
+    line-height: 48rpx;
+}
+
+.pay_info{
+    width: 690rpx;
+    height: auto;
+    background:#FFFFFF;
+    border-radius: 10rpx;
+}
+.pay_info_head{
+    line-height: 88rpx;
+    font-size: 32rpx;
+    color: #000000;
+    border-bottom:1rpx solid #F2F2F2;
+}
+
+.pay_info_real_money .price-color{
+    font-size: 32rpx;
+}
+
+.title{
+    color: #333333;
+    font-size: 32rpx;
+}
+.ltitle{
+    font-size:24rpx;
+    color:#999999;
+    margin-top:10rpx;
+}
+.content{
+    color: #666666;
+    font-size: 32rpx;
+}
+.none{
+    color: #999999;
+    font-size: 32rpx;
+}
+
+.btn{
+    text-align: center;
+    line-height: 88rpx;
+    margin:60rpx 0;
+}
+.copy{
+    width:84rpx;
+    text-align:center;
+    line-height:44rpx;
+    height:44rpx;
+    background:rgba(255,255,255,1);
+    border:1rpx solid rgba(230, 230, 230, 1);
+    border-radius:22rpx;
+    font-size:24rpx;
+    font-weight:500;
+    color:#333333;
+}

@@ -1,0 +1,26 @@
+<import src="../../wxParse/wxParse.wxml"></import>
+<view class="graphic">
+   <view class="detail">
+       <image bindtap="previewImage" data-src="{{cover_pic}}" class="detail_img" mode="widthFix" src="{{cover_pic}}"></image>
+       <view class=" pl-30 flex_row_nowrap flex_start align_center" style="margin-top: 22rpx;">
+           <image class="user_img flex-grow-0" src="{{author_logo}}"></image>
+           <view class="user_name flex-grow-1">{{author}}</view>
+       </view>
+       <view class="pl-30 detail_title pr-30">
+           {{title}}
+       </view>
+       <view class="ml-30 detail_time pb-30">
+           {{addtime}}
+       </view>
+   </view>
+   <view class="content">
+       <template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
+   </view>
+</view>
+<view class="contact_designer flex_row_nowrap space_center align_center">
+    <navigator class="flex_row_nowrap space_between align_center">
+        <image class="contact_designer_img" src="{{img_url}}/anli_dianhua@2x.png"></image>
+        <view class="contact_designer_text ml-30">联系设计师</view>
+    </navigator>
+</view>
+

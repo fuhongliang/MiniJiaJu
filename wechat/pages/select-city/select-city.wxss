@@ -1,0 +1,43 @@
+.current-city {
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+    border-bottom:solid 1rpx #F2F2F2;
+    font-size:26rpx;
+}
+
+.current-city .location{
+    height: 28rpx;
+    width: 28rpx;
+}
+.current-city .desc-text{
+    padding-left: 10rpx;
+}
+
+.current-city-text {
+    color:#0EC262;
+    padding-left: 30rpx;
+}
+
+.business-city{
+    margin-top: 30rpx;
+}
+.business-city text{
+    color:#999999;
+    font-size:24rpx;
+}
+
+.business-city-list{
+    padding-top: 20rpx;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+.business-city-list .item{
+    font-size: 24rpx;
+    margin: 20rpx;
+    padding:20rpx 30rpx;
+    background-color: #F5F5F5;
+    color: #333333;
+}

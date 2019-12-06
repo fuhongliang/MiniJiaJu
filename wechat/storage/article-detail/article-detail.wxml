@@ -1,0 +1,10 @@
+<import src="../../wxParse/wxParse.wxml"></import>
+<view class="aboutus">
+    <view class="aboutus_container pl-30 pr-30">
+        <view class="company_name fwb">{{title}}</view>
+        <view class="publish_time">发布时间： {{addtime}}</view>
+    </view>
+    <view class="intro pl-30 pr-30">
+        <template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
+    </view>
+</view>

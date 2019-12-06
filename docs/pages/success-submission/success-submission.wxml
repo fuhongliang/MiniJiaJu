@@ -1,0 +1,6 @@
+<view class="flex_column_wrap align_center" style="background: #FFFFFF;border-top: 1rpx solid #E5E5E5;height: 100%;width: 100%;">
+    <image class="icon" src="{{img_url}}/tijiaochenggong_ci@2x.png"></image>
+    <view class="title mt-30">提交成功</view>
+    <view class="content mt-30">稍后会有设计师电话联系您，请保持手机的畅通</view>
+    <view class="btn">知道了</view>
+</view>

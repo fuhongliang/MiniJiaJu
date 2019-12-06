@@ -1,0 +1,76 @@
+<view class="tabbar_container">
+    <scroll-view scroll-x="true">
+       <view class="flex-row align_center tab-bar {{status==4?'translate':''}}">
+                   <view class="tab-bar-item" bindtap="toggleTab"  data-name="-1">
+                       <view class="tab-bar-item-text {{status==-1?'active':''}}">
+                           <text>全部</text>
+                       </view>
+                   </view>
+                   <view class="tab-bar-item"  bindtap="toggleTab"  data-name="0">
+                       <view class="tab-bar-item-text {{status==0?'active':''}}">
+                           <text>待付款</text>
+                       </view>
+                   </view>
+                   <view class="tab-bar-item"  bindtap="toggleTab" data-name="1">
+                       <view class="tab-bar-item-text {{status==1?'active':''}}">
+                           <text>待发货</text>
+                       </view>
+                   </view>
+                   <view class="tab-bar-item"   bindtap="toggleTab"  data-name="2">
+                       <view class="tab-bar-item-text {{status==2?'active':''}}">
+                           <text>待收货</text>
+                       </view>
+                   </view>
+                   <view class="tab-bar-item"   bindtap="toggleTab"  data-name="3">
+                       <view class="tab-bar-item-text {{status==3?'active':''}}">
+                           <text>已完成</text>
+                       </view>
+                   </view>
+                   <view class="tab-bar-item"   bindtap="toggleTab"  data-name="4">
+                       <view class="tab-bar-item-text {{status==4?'active':''}}">
+                           <text>已取消</text>
+                       </view>
+                   </view>
+        </view>
+    </scroll-view>
+</view>
+<view class="content">
+    <swiper class="content_container" bindchange="toggleContent" scroll-x="true" current="{{current}}" style="height:{{height}}rpx;">
+        <swiper-item class="tab_content" wx:for="{{6}}" wx:for-item="a" wx:key="index">
+            <view class="goods_item pl-30 flex-col" wx:for="{{orders}}"  wx:key="index">
+                <view class="goods_item_head pr-30 flex_row_nowrap space_between align_center">
+                    <view class="head_img flex_row_nowrap align_center">
+                        <image class="avatar" src="{{item.user_img}}"></image>
+                        <view class="head_title text">{{item.user_name}}</view>
+                        <image class="arrow" src="/images/total/dingdan_jinru@2x.png"></image>
+                    </view>
+                    <view class="head_status">
+                        <text class="pay" wx:if="{{item.goods_status===0}}">待付款</text>
+                        <text class="send" wx:if="{{item.goods_status===1}}">待发货</text>
+                        <text class="receive" wx:if="{{item.goods_status===2}}">待收货</text>
+                        <text class="complete" wx:if="{{item.goods_status===3}}">已完成</text>
+                        <text class="cancel" wx:if="{{item.goods_status===4}}">已取消</text>
+                    </view>
+                </view>
+                <view class="goods_item_detail pr-30 flex_row_nowrap align_center">
+                    <image class="business_logo" src="{{item.goods_img}}"></image>
+                    <view class="business_detail">
+                        <view class="goods_name text">{{item.goods_name}}</view>
+                        <view class="goods_spec">{{item.goods_spec}}</view>
+                        <view style="width: 506rpx;margin-top: 45rpx" class="flex_row_nowrap space_between align_center">
+                            <view class="goods_price">{{item.goods_price}}</view>
+                            <view class="goods_num">x {{item.goods_num}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="goods_item_status pr-30">
+                    <view wx:if="{{item.goods_status == 0||item.goods_status == 1}}" class="cancel_order mr-30">取消订单</view>
+                    <view wx:if="{{item.goods_status == 0}}" class="pay">立即支付</view>
+                    <view  wx:if="{{item.goods_status == 1}}"  class="contact">联系卖家</view>
+                    <view  wx:if="{{item.goods_status == 2}}"  class="receive">确认收货</view>
+                    <view  wx:if="{{item.goods_status == 3||item.goods_status == 4}}"  class="delete_order">删除订单</view>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>

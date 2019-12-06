@@ -1,0 +1,14 @@
+@import "../../../wxParse/wxParse.wxss";
+
+.body {
+    background: #fff;
+    overflow-x: hidden;
+}
+.wxParse-p {
+    padding-left: 0;
+    padding-right: 0;
+}
+.wxParse-p image{
+    margin-left:0rpx;
+}
+

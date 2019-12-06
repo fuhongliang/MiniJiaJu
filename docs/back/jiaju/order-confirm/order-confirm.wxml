@@ -1,0 +1,97 @@
+<view class="confirm">
+  <view class="body">
+    <!-- 确认地址栏 -->
+    <view class="person_info">
+      <image class="bg_img" src="/images/total/dingdan_bnt@2x.png"></image>
+      <view class="address flex-row flex-y-center space_center align_center">
+        <view wx:if="{{true}}" class="flex-row align_center" style="width: 100%;height: 100%;">
+          <view class="address_img flex-row space_center align_center">
+            <image src="/images/total/dingdan_ic_dw@2x.png"></image>
+          </view>
+          <view class="address_info">
+            <view class="person_user">
+              <text>张明明</text>
+              <text>12345678900</text>
+            </view>
+            <view class="person_address">
+              广东省深圳市宝安区新安三路28号16楼1610
+            </view>
+          </view>
+          <view class="confirm_arrow  flex-row space_center align_center">
+            <image src="/images/total/dingdan_jinru@2x.png"></image>
+          </view>
+        </view>
+        <view wx:else>
+          <view class="add_address">
+            新增地址
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 确认订单栏 -->
+    <view class="confirm_goods">
+      <view class="confirm_business  flex_row_nowrap align_center">
+        <view class="confirm_avatar">
+          <image src="/images/total/home_bnt_banner@2x.png"></image>
+        </view>
+        <view class="confirm_name">凯鹰厨卫</view>
+          <image class="confirm_arrow" src="/images/total/dingdan_jinru@2x.png"></image>
+      </view>
+      <!-- wx:for -->
+      <view class="goods_info flex_row_nowrap align_center">
+        <view class="goods_info_img">
+          <image src="/images/total/home_bnt_banner@2x.png"></image>
+        </view>
+        <view class="goods_info_text">
+          <view class="flex-grow-1">
+            <view class="goods_info_title text">
+              暖眠北欧三人沙发橡木家具暖眠北欧三人沙发橡木家具
+            </view>
+            <view class="goods_info_spec">
+              白橡木 1800mm*2000mm
+            </view>
+          </view>
+          <view  class="flex-grow-1 flex-row space_between price_container">
+            <view class="goods_price">
+                ￥5999.00
+              </view>
+            <view class="goods_num">
+              x 1
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <view class="message flex-row align_center">
+        <view class="message_title">留言：</view>
+        <view class="message_input">
+            <input  bindinput="inputMessage" placeholder="点击填写留言"/>
+        </view>
+      </view>
+    </view>
+    <!-- 商品金额、运费 -->
+    <view class="total_prices flex-row space_between align_center">
+      <view>商品金额</view>
+      <view class="total_prices_account">￥{{totalPrice}}</view>
+    </view>
+    <view class="freight flex-row space_between align_center">
+      <view>
+        运费
+      </view>
+      <view class="freight_price">
+        ￥{{totalFreight}}
+      </view>
+    </view>
+    <!-- 确认订单栏 -->
+    <view class="confirm_bar flex_row_nowrap space_between align_center">
+      <view>
+        <text class="price_title">总付：</text>
+        <text class="price">￥{{totalPrice}}</text>
+      </view>
+      <view>
+        <view class="submit_order" bindtap="as">提交订单</view>
+      </view>
+    </view>
+    
+  </view>
+</view>

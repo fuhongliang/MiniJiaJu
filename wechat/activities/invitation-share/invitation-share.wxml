@@ -1,0 +1,7 @@
+<view class="invitation">
+  <image class="invitation_bg" src="{{img_url}}/yqyj_bnt_bj@2x.png"></image>
+  <view class="invitation_container flex_column_wrap align_center space_center">
+    <image mode="widthFix" class="invitation_btn" src="{{img_url}}/yqyj_anniu_yq@2x.png"></image>
+    <image mode="widthFix" class="invitation_rules_title" src="{{img_url}}/yqyj_hdgz@2x.png"></image>
+  </view>
+</view>

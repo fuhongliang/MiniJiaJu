@@ -1,0 +1,161 @@
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100rpx;
+    background: #fff;
+    border-top: 1rpx solid #e3e3e3;
+    width: 100%;
+    z-index: 1000;
+}
+
+.cart-list {
+    padding-bottom: 24rpx;
+}
+
+.bottom-bar .submit-btn {
+    background: #0EC262;
+    color: #fff;
+    width: 160rpx;
+    text-align: center;
+    font-size:36rpx;
+    font-weight:bold;
+}
+
+.bottom-bar .edit-btn {
+    background: #FF7B1B;
+    color: #fff;
+    width: 160rpx;
+    text-align: center;
+    font-size:36rpx;
+    font-weight:bold;
+}
+
+.cart-checkbox image{
+    width: 40rpx;
+    height: 40rpx;
+}
+.cart-checkbox{
+    display: inline-block;
+    width: 40rpx;
+    height: 40rpx;  
+}
+
+.cart_head{
+    width: 750rpx;
+    padding-left: 30rpx;
+    text-align: left;
+    height: 88rpx;
+    font-size:50rpx;
+    font-weight:bold;
+    color:#000000;
+    background: #FFFFFF;
+}
+
+.cart-item {
+    background: #fff;
+    border-bottom: 1rpx solid #e3e3e3;
+    padding: 32rpx 24rpx 16rpx 0;
+}
+
+.cart-item .goods-pic {
+    width: 186rpx;
+    height: 186rpx;
+    margin-right: 20rpx;
+}
+
+.cart-item .goods-name {
+    margin-bottom: 10rpx;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 34rpx;
+    color: #333333;
+}
+
+.cart-item .attr-list,.cart-item .num {
+    font-size: 9pt;
+    color: #888;
+}
+
+.cart-item .attr-list .attr-item {
+    display: inline-block;
+    margin-right: 36rpx;
+    background:#F2F2F2;
+    text-align: left;
+    color:#999999;
+    position: relative;
+    padding: 5rpx 30rpx 5rpx 15rpx;
+    font-size: 28rpx;
+}
+
+.cart-item .attr-list .attr-item:last-child {
+    margin-right: 0;
+}
+
+.cart-item .price {
+    color: #FD5757;
+    font-size: 34rpx;
+    font-weight: bold;
+}
+
+.cart-item .cart-tag {
+    font-size: 8pt;
+    color: #ff4544;
+    background: #ffd3d6;
+    padding: 3rpx 6rpx;
+}
+
+.page.show_navbar .body .bottom-bar {
+    bottom: 115rpx;
+}
+
+.page.show_navbar.device_iphone_x .body .bottom-bar {
+    bottom: 180rpx;
+}
+
+.image1 {
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.row-data {
+    height: 36rpx;
+    line-height: 36rpx;
+    margin: 0 4rpx;
+    width: 50rpx;
+    text-align: center;
+    font-size: 11pt;
+    color: #333333;
+}
+
+.mch-header {
+    background: #fff;
+    border-top: 1rpx solid #e3e3e3;
+    border-bottom: 1rpx solid #F2F2F2;
+    height: 88rpx;
+}
+.mch-header-container{
+   width: 300rpx;
+}
+
+.business_avatar{
+    width: 40rpx;
+    height: 40rpx;
+}
+.business_name{
+    font-size:30rpx;
+    color:#000000;
+    margin-left: 15rpx;
+}
+
+.business_avatar image{
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+}
+.business_link image{
+    width: 10rpx;
+    height: 16rpx;
+}

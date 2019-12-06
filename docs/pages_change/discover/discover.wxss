@@ -1,0 +1,130 @@
+.discover{
+  width: 750rpx;
+  height: 100%;
+  background: #F2F2F2;
+  position: relative;
+  overflow: hidden;
+}
+.scroll_view{
+    width: 750rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}
+.swiper_item{
+  width: 100%;
+}
+.discover_bar{
+  height: 88rpx;
+  width: 750rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 888;
+  background: #FFFFFF;
+  border-bottom: 1rpx solid #F2F2F2;
+}
+.content_container{
+  width: 750rpx;
+  height: 100%;
+  position: absolute;
+  top: 0rpx;
+  left: 0;
+  z-index: 88;
+  background: #FFFFFF;
+  overflow: hidden;
+  padding-top: 88rpx;
+}
+.content{
+  height: 100%;
+  padding-bottom: 30rpx;
+  position: relative;
+}
+.static{
+  font-size:32rpx;
+  color: #666666;
+}
+.active{
+  color: #000000;
+  font-weight: bold;
+}
+
+.line{
+  width:30rpx;
+  height:4rpx;
+  background:rgba(14,194,98,1);
+  position: absolute;
+  bottom: 20rpx;
+  left: 0;
+  transition: transform .2s ease-in;
+}
+.discover_bar.active1 .line{
+  transform: translateX(47rpx);
+}
+.discover_bar.active2 .line{
+  transform: translateX(200rpx);
+}
+
+.discover_list1{
+  width: 690rpx;
+  margin-top: 30rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.discover_list2{
+  width: 690rpx;
+  margin-top: 30rpx;
+}
+.left,.right{
+  width: 330rpx;
+}
+.discover_item{
+  width: 330rpx;
+  display: inline-block;
+}
+.item_img{
+  width: 330rpx;
+  border-radius: 4rpx;
+}
+.item_content{
+  width: 330rpx;
+  font-size:32rpx;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  line-height:43rpx;
+  text-align: justify;
+  word-wrap:break-word;
+}
+
+.item_info_img{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+}
+.item_name{
+  margin-left: 14rpx;
+}
+.item_name,.item_time{
+  color: #999999;
+  font-size: 28rpx;
+}
+
+.cases_item{
+  width: 690rpx;
+  margin-bottom: 30rpx;
+}
+.cases_item .item_img{
+  width: 688rpx;
+  height: 300rpx;
+}
+
+.cases_item .item_content{
+  width: 690rpx;
+}
+.nomore{
+  width: 100%;
+  text-align: center;
+  line-height: 88rpx;
+  color: #999999;
+  font-size: 28rpx;
+}

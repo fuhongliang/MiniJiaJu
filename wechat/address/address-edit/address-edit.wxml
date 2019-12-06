@@ -1,0 +1,38 @@
+<view class="bottom-bar">
+    <navigator bindtap="saveAddress">保存</navigator>
+</view>
+
+<view>
+    <view class="flex-row flex-y-center edit-row">
+        <view class="flex-grow-0 row-label">联系人</view>
+        <view class="flex-grow-1">
+            <input class="input_text" bindinput="inputBlur" data-name="name" placeholder="请输入收货人姓名" placeholder-style="none_enter_state" value="{{name}}"></input>
+        </view>
+    </view>
+    <view class="flex-row flex-y-center edit-row">
+        <view class="flex-grow-0 row-label">手机号</view>
+        <view class="flex-grow-1">
+            <input  class="input_text" maxlength="11"  bindinput="inputBlur" data-name="mobile" placeholder="请输入手机号码" placeholder-style="none_enter_state" type="number" value="{{mobile}}"></input>
+        </view>
+    </view>
+    <view class="flex-row flex-y-center edit-row">
+        <view class="flex-grow-0 row-label">收货地址</view>
+        <view bindtap="showAreaPicker" class="flex-grow-1 flex-row">
+            <view class="flex-grow-1" style="text-align: right;padding-right: 24rpx;font-size: 30rpx;">
+                <view wx:if="{{district==null}}" style="color:#999999">点击选择地址</view>
+                <view wx:else style="color:#333333">{{district.province.name}} {{district.city.name}} {{district.district.name}}</view>
+            </view>
+            <view class="flex-grow-0 flex-y-center">
+                <image src="{{img_url}}/dingdan_jinru@2x.png" style="width: 12rpx;height: 22rpx"></image>
+            </view>
+        </view>
+    </view>
+    <view class="flex-row flex-y-center edit-row">
+        <view class="flex-grow-0 row-label">详细地址</view>
+        <view class="flex-grow-1">
+            <input  class="input_text"  bindinput="inputBlur" data-name="detail" placeholder="详细地址，例：1号楼103室" placeholder-style="none_enter_state" value="{{detail}}"></input>
+        </view>
+    </view>
+    <view bindtap="getWechatAddress" class="get-wechat-address">一键获取微信地址</view>
+</view>
+<include src="../../area-picker/area-picker.wxml"></include>

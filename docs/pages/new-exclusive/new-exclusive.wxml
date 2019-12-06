@@ -1,0 +1,38 @@
+<view>
+    <image class="bg" mode="widthFix" src="/images/total/xinren_ic_bnt@2x.png"></image>
+    <view class="content">
+      <image mode="widthFix" class="goto_get" src="/images/total/xinren_an_lq@2x.png"></image>
+      <view class="evaluate  flex_column align_center">
+        <view class="evaluate_item flex_row_nowrap space_between align_center" wx:for="{{3}}" wx:key="index">
+          <view class="item_left  flex_column_wrap space_center align_center">
+            <image mode="widthFix" class="item_tags" src="/images/total/youhuiq_bnt@2x.png"></image>
+            <view class="evaluate_content flex_column_wrap space_center align_center">
+              <view class="price"><text style="font-size: 30rpx;">￥</text><text  style="font-size: 72rpx;">20</text></view>
+              <view class="rules">全场商品通用</view>
+            </view>
+          </view>
+          <view class="item_right flex_column_wrap space_center">
+            <view class="title">新人专享券</view>
+            <view class="days_rule">限两天内使用</view>
+            <view class="goto_get_text" bindtap="gotoGet" wx:if="{{isGet == false}}">立即领取</view>
+            <view class="goto_get_text {{isGet == false?'':'active'}}" wx:if="{{isGet == true}}">去使用</view>
+            <image class="get_success" src="/images/total/youhuiq_ic_lqcg@2x.png"  wx:if="{{isGet == true}}"></image>
+          </view>
+        </view>
+      </view>
+      <view class="activity_rule">
+        <view class="rules_title flex_row_nowrap space_center align_center">
+          <image class="point_arrow" mode="widthFix" src="/images/total/xinren_ic_you@2x.png"></image>
+          <view class="point_title ml-30 mr-30">活动规则</view>
+          <image class="point_arrow" mode="widthFix" src="/images/total/xinren_ic_zuo@2x.png"></image>
+        </view>
+        <view class="rules_content">
+          <view>1. 本活动仅限新用户专享，注册即可领取优惠券，仅限一次，如有疑问可咨询客服；</view>
+          <view>2. 优惠券为购买时使用，有效期为2-10天；</view>
+          <view>3. 在法律许可范围内，本活动最终解释权归一美一物电子商务有限公司所有</view>
+        </view>
+      </view>
+      
+      
+    </view>
+</view>

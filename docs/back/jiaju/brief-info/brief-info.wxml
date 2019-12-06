@@ -1,0 +1,13 @@
+<view class="brief">
+<swiper class="info_container">
+  <swiper-item class="info" wx:for="{{5}}" wx:key="index">
+      <image mode="widthFix" class="info_img"  src="/images/total/home_bnt_banner@2x.png"></image>
+      <view class="content pl-30 pr-30">
+        利用凹位，设计鞋柜拼接餐边柜，中间用圆弧柜过度 视觉上会更加舒服而且避免直角磕碰。对面墙是到顶 储物柜，增加酒柜.
+                利用凹位，设计鞋柜拼接餐边柜，中间用圆弧柜过度 视觉上会更加舒服而且避免直角磕碰。对面墙是到顶 储物柜，增加酒柜.
+      </view>
+  </swiper-item>
+</swiper>
+</view>
+
+

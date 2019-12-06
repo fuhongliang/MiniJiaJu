@@ -1,0 +1,126 @@
+.discover{
+  width: 750rpx;
+  height: 100%;
+  background: #F5F5F5;
+  position: relative;
+  overflow: hidden;
+}
+.scroll_view{
+    width: 750rpx;
+    height: 100%;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    padding-bottom: 98rpx;
+}
+.swiper_item{
+  width: 100%;
+}
+.discover_bar{
+  height: 88rpx;
+  width: 750rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 888;
+  border-bottom: 1rpx solid #F2F2F2;
+}
+.content_container{
+  width: 750rpx;
+  height: 100%;
+  position: absolute;
+  top: 0rpx;
+  left: 0;
+  z-index: 88;
+  overflow: hidden;
+}
+.content{
+  height: 100%;
+  position: relative;
+}
+.static{
+  font-size:32rpx;
+  color: #666666;
+}
+.active{
+  color: #000000;
+  font-weight: bold;
+}
+
+.line{
+  width:30rpx;
+  height:4rpx;
+  background:rgba(14,194,98,1);
+  position: absolute;
+  bottom: 20rpx;
+  left: 0;
+  transition: transform .2s ease-in;
+}
+.discover_bar.active1 .line{
+  transform: translateX(100rpx);
+}
+.discover_bar.active2 .line{
+  transform: translateX(200rpx);
+}
+
+.discover_list1{
+  width: 690rpx;
+  margin-top: 30rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.discover_list2{
+  width: 690rpx;
+  margin-top: 30rpx;
+}
+.left,.right{
+  width: 330rpx;
+}
+.discover_item{
+  width: 330rpx;
+  display: inline-block;
+}
+.item_img{
+  border-radius: 6rpx 6rpx 0rpx 0rpx;
+}
+.item_content{
+  width: 598rpx;
+  padding: 0 22rpx;
+  margin-top: 8rpx;
+}
+.item_info{
+  margin-top: 10rpx;
+}
+.item_info_img{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  border:1rpx solid #F2F2F2;
+}
+.item_name{
+  margin-left: 14rpx;
+}
+
+.cases_item{
+  width: 690rpx;
+  margin-bottom: 30rpx;
+  background: #FFFFFF;
+  border-radius: 6rpx;
+  padding-bottom: 16rpx;
+}
+.cases_item .item_img{
+  width: 688rpx;
+  height: 300rpx;
+}
+
+.cases_item .item_content{
+  width: 690rpx;
+}
+.nomore{
+  width: 100%;
+  text-align: center;
+  line-height: 88rpx;
+  color: #999999;
+  font-size: 28rpx;
+}

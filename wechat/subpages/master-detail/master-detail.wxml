@@ -1,0 +1,23 @@
+<import src="../../wxParse/wxParse.wxml"></import>
+<button data-reply-phone='{{mobile}}' bindtap="phoneCall" class='calltel'>预约热线</button>
+<view class='master-detail'>
+  <view class='con1'>
+    <image src='{{cover_pic}}'></image>
+    <view>
+      <view class='v1'>{{name}}</view>
+      <view class='v2'>工种：
+        <text>{{job}}</text>工龄：
+        <text>{{year}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='con2'>
+    <text>特点</text>{{advantage}}
+  </view>
+  <view class='con3'>
+    <view class='title'>个人简介</view>
+    <view class='more'>
+      <template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
+    </view>
+  </view>
+</view>

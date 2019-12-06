@@ -1,0 +1,27 @@
+<include src="/commons/header/header"></include>
+<view class="discover">
+<view class="content_container" >
+     <view class="content">
+        <scroll-view scroll-y="true"  class="scroll_view" bindscrolltolower="loadCases"  lower-threshold="100">
+          <view class="discover_list2" wx:if="{{cases}}">
+            <navigator   hover-class="none"  openType="navigate"  url="/pages/graphic-details/graphic-details?id={{item.id}}" wx:for="{{cases}}" wx:key="index">
+              <view class="cases_item">
+                <image class="item_img" src="{{item.cover_pic}}"></image>
+                <view class="item_content text font-con-title color-h2 text">
+                  {{item.title}}
+                </view>
+                <view class="item_info flex_row_nowrap align_center pl-22 pr-22">
+                  <image class="item_info_img flex-grow-0" src="{{item.author_logo}}"></image>
+                  <view class="item_name font-assist-title color-h4">{{item.author}}</view>
+                  <view class="font-assist-title color-h4 pl-22 pr-22">|</view>
+                  <view class="item_time font-assist-title color-h4">{{item.addtime}}</view>
+                </view>
+              </view>
+            </navigator>
+          </view>
+          <view class="nomore" wx:if="{{nomore}}">没有更多的数据了</view>
+        </scroll-view>
+  </view>
+</view>
+</view>
+<include src="/commons/footer/footer"></include>

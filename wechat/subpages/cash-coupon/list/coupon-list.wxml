@@ -1,0 +1,37 @@
+<view class="info">
+    <view class="info-list" style="width:100%;">
+        <view class="info-one" wx:for="{{coupon_list}}" wx:for-item="coupon" wx:key="id">
+            <image src="{{img_url}}/icon-coupon-enabled.png"></image>
+            <view class="info-content flex-row flex-x-center flex-y-center">
+                <view class="flex-grow-0">
+                    <view class="flex-row flex-y-bottom">
+                        <view class="flex-grow-0">￥</view>
+                        <view class="flex-grow-1" style="font-size:23pt;">{{coupon.coupon_price}}</view>
+                    </view>
+                </view>
+                <view class="flex-grow-1" style="font-size:11pt">
+                    <view style="margin-left:16rpx;">
+                        <view style="margin-bottom:4rpx;">抵扣券</view>
+                        <view>{{coupon.coupon_title}}</view>
+                    </view>
+                </view>
+                <view class="flex-grow-0">
+                    <view bindtap="buyCoupon" class="flex-x-center flex-y-center info-btn" data-index="{{coupon.id}}" style="color:#ff4544;">立即购买</view>
+                </view>
+            </view>
+            <view class="info-footer">
+                <view class="info-day">每人限购：{{coupon.user_num}}</view>
+                <view>
+                    <view>{{coupon.brand_list}}</view>
+                </view>
+                <view>
+                    <view>备注：{{coupon.remark}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="flex-x-center" wx:if="{{coupon_list.length<=0}}">
+        <text style="margin-top:50rpx;">暂无抵扣券</text>
+    </view>
+</view>
+<include src="/commons/get-coupon/get-coupon.wxml"></include>

@@ -1,0 +1,33 @@
+<view wx:if="{{notice}}" class="notice pl-30 pr-30 flex_row_nowrap space_between align_center">
+    <view>左滑可删除图文</view>
+    <view bindtap="closeNotice">×</view>
+</view>
+<view class="graphic pt-30">
+   <scroll-view  scrollY="true" class="h-100" bindscrolltolower="loadGraphic" lower-threshold="100">
+       <view class="graphic_list">
+           <scroll-view scrollX="true"  wx:for="{{graphic}}" wx:key="index">
+               <view class="graphic_item_container flex_row_nowrap">
+                   <view class="graphic_item">
+                       <view class="item_img flex_row_wrap align_center space_center">
+                           <navigator hover-class="none" openType="navigate" url="/pages/graphic-details/graphic-details?id={{item.id}}">
+                           <image class="home_img" src="{{item.article_image[0]}}"></image>
+                           </navigator>
+                       </view>
+                       <view class="item_title text">{{item.article_content}}</view>
+                       <view class="users_info flex_row_nowrap align_center flex_start">
+                           <image class="flex-grow-0" src="{{item.avatar_url}}"></image>
+                           <view class="flex-grow-1 users_name">{{item.nickname}}</view>
+                           <view class="flex-grow-0 time">{{item.created_at}}</view>
+                       </view>
+                   </view>
+                   <view class="delete"> 
+                       <image  data-id="{{item.id}}" src="{{img_url}}/wdtw_ic_shanchu@2x.png" bindtap="isDelete"></image>
+                   </view>
+               </view>
+           </scroll-view>
+       </view>
+       <view class="nomore">没有更多数据了</view>
+   </scroll-view>
+</view>
+
+

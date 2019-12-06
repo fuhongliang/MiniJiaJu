@@ -1,0 +1,49 @@
+<view class="invitation">
+  <image class="invitation_bg" src="{{img_url}}/yqyj_bnt_beijing1@2x.png"></image>
+  <view class="invitation_container flex_column_wrap align_center space_center">
+    <image class="avatar" src="{{img_url}}/home_bnt_banner@2x.png"></image>
+    <view class="nickname">159****4585</view>
+    <view class="hello_word">嗨！朋友，我来给你送福利咯！</view>
+    <view mode="widthFix" class="invitation_btn" bindtap="gotoGet">立即领取</view>
+    <view class="invitation_text">
+      一美一物小程序版权所有
+    </view>
+  </view>
+</view>
+<view class="evaluate {{isGet==true?'active':''}}">
+  <image mode="widthFix" class="evaluate_bg" src="{{img_url}}/yqyj_bnt_lqcgbj@2x.png"></image>
+  <view class="evaluate_list">
+      <view class="evaluate_list_box">
+          <view class="evaluate_list_head flex_row_nowrap align_center">
+              <view class="flex-grow-1 evaluate_list_head_text">已放入微信账户：189****6556</view>
+          </view>
+          <view class="evaluate_items_container">
+              <scroll-view scrollY="true" class="evaluate_scroll">
+                  <view class="evaluate_item mt-30 flex_row_nowrap space_between align_center" wx:for="{{8}}" wx:key="index">
+                    <view class="item_left  flex_row_nowrap space_center align_center">
+                      <image mode="widthFix" class="item_tags" src="{{img_url}}/youhuiq_bnt@2x.png"></image>
+                      <view class="evaluate_content  flex_column_wrap space_between align_center">
+                        <view class="price"><text style="font-size: 30rpx;text-align: left;">￥</text><text  style="font-size: 72rpx;text-align: center;">20</text></view>
+                        <view class="rules">全场商品通用</view>
+                      </view>
+                    </view>
+                    <view class="item_right flex_column_wrap space_center">
+                      <view class="title text">新人专享券</view>
+                      <view class="days_rule">有效期：2019.06.20</view>
+                      <navigator open-type="reLaunch" hover-class="none" url="/pages/index/index">
+                        <view class="is_choose mt-30" bindtap="hide">去使用</view>
+                      </navigator>
+                    </view>
+                  </view>
+              </scroll-view>
+          </view>
+          <view class="flex_column_wrap space_center align_center" style="position: absolute;bottom: 30rpx;left: 0rpx;z-index: 33;">
+              <navigator hover-class="none"  open-type="reLaunch"  url="/pages/index/index">
+                <view class="confirm_btn" bindtap="hide">
+                    打开一美一物
+                </view>
+              </navigator>
+          </view>
+      </view>
+  </view>
+</view>

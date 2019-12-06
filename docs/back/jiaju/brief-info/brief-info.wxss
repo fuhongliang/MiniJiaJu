@@ -1,0 +1,35 @@
+page{
+    background: #000000;
+}
+
+.brief{
+    width: 100%;
+    height: 100%;
+    background: #000000;
+}
+.info_container{
+    width: 750rpx;
+    height: 100%;
+}
+.info{
+    position: relative;
+}
+.info_img{
+    width: 750rpx;
+    position: absolute;
+    top: 30%;
+    left: 0;
+}
+.content{
+    color: #FFFFFF;
+    font-size: 30rpx;
+    line-height: 55rpx;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: justify;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}

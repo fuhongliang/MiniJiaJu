@@ -1,0 +1,18 @@
+<view class="pg">
+  <view class="pg_container">
+      <textarea bindblur='bindTextAreaBlur'  class="pg_text pt-30 mb-30" placeholder="请输入正文" maxlength="-1" value="{{content}}">
+      </textarea>
+      <view class="img_container  flex_row_wrap flex_start align_center">
+          <image class="upload mb-30" bindtap="bindUploadImg" src="{{uploadImg}}"></image>
+          <view wx:if="{{uploadedImgs}}" class="imgs mb-30" wx:for="{{uploadedImgs}}" wx:key="index">
+              <image class="img_item" src="{{item}}"></image>
+              <image data-index="{{index}}" src="/images/total/icon_guanbis@2x.png" class="close_icon" bindtap="deleteImge"></image>
+          </view>
+      </view>
+  </view>
+  <view class="pg_btn">
+      <view class="btn" bindtap="bindPublish">发布</view>
+  </view>
+</view>
+
+

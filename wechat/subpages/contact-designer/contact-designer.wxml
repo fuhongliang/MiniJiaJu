@@ -1,0 +1,20 @@
+<view>
+    <view class="content">
+        <view class="content_person flex_row_nowrap align_center">
+            <view  class="flex-grow-1 title">联系人</view>
+            <view class="flex-grow-1">
+                <input type="text"  placeholder-class="placeholder"  placeholder-style="color:#999999;font-size:32rpx;"  placeholder="请输入您的姓名" value="{{contact}}" bindinput="inputName"/>
+            </view>
+        </view>
+        <view class="content_phone  flex_row_nowrap align_center">
+            <view class="flex-grow-1 title">联系电话</view>
+            <view  class="flex-grow-1">
+                <input type="number" maxlength="11" placeholder-class="placeholder"  placeholder-style="color:#999999;font-size:32rpx;"  placeholder="请输入您的联系方式" bindinput="inputPhone"  value="{{telephone}}"/>
+            </view>
+        </view>
+        <view class="content_msg">
+            <textarea class="textarea" maxlength="-1" placeholder-class="placeholder" placeholder="请填写您的咨询事项，点击留言" placeholder-style="color:#999999;font-size:32rpx;" value="{{message}}" bindinput="inputMessage"></textarea>
+        </view>
+    </view>
+    <view class="btn ml-30" bindtap="submitMsg">提交</view>
+</view>

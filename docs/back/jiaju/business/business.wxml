@@ -1,0 +1,51 @@
+<view class="business">
+    <view class="body">
+        <view class="business_info flex_row_nowrap space_between align_center">
+            <view class="business_info_img">
+                <image src="{{business.avatar}}"></image>
+            </view>
+            <view class="business_info_detail">
+                <view class="business_name">{{business.name}}</view>
+                <view class="business_star flex_row_nowrap space_between align_center">
+                    <view class="star" wx:for="{{business.star}}"  wx:key="index"></view>
+                    <text>{{business.score}}</text>
+                </view>
+            </view>
+            <view class="business_info_follow" bindtap="toggleFollow">
+                <text wx:if="{{follow}}">取消关注</text>
+                <text wx:else>关注</text>
+            </view>
+        </view>
+        <view class="business_spec">
+            <view class="business_spec_head flex_row_nowrap align_center">
+                <view class="flex-grow-1 {{chooseSpec==0?'active':''}}" bindtap="toggleSpec">全部商品</view>
+                <view class="flex-grow-1 {{chooseSpec==1?'active':''}}" bindtap="toggleSpec">精选方案</view>
+            </view>
+            <swiper class="business_spec_con" current="{{chooseSpec}}" bindchange="toggleBar" style="height:{{toggleHeight}}rpx">
+               <swiper-item>
+                   <!-- 全部商品 -->
+                   <view wx:if="{{chooseSpec==0}}" class="flex_row_wrap space_between align_center">
+                       <view wx:for="{{business.allGoods}}" wx:key="index" class="all_goods">
+                           <view class="all_goods_img">
+                               <image src="{{item.pic_url}}"></image>
+                           </view>
+                           <view class="allGoods_title text">{{item.title}}</view>
+                           <view class="all_goods_price text">¥ {{item.price}}</view>
+                       </view>
+                   </view>
+               </swiper-item>
+                <swiper-item>
+                    <!-- 精选方案 -->
+                    <view wx:if="{{chooseSpec==1}}" class="flex_column_wrap space_around">
+                        <view wx:for="{{business.cases}}" wx:key="index" class="cases">
+                            <view class="cases_img">
+                                <image src="{{item.pic_url}}"></image>
+                            </view>
+                            <view class="cases_title text">{{item.title}}</view>
+                        </view>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+</view>
